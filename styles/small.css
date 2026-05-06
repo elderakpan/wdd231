@@ -1,0 +1,54 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+#menuBtn {
+    font-size: 2rem;
+    background: none;
+    border: none;
+}
+
+nav {
+    display: none;
+}
+
+nav.open {
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem;
+}
+
+main {
+    padding: 1rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+#courses div {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 5px;
+}
+
+.completed {
+    background-color: lightgreen;
+}
