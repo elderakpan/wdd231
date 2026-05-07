@@ -1,27 +1,38 @@
 const courses = [
-    { code: "WDD130", credits: 3, type: "WDD", completed: true },
-    { code: "WDD131", credits: 3, type: "WDD", completed: true },
-    { code: "WDD231", credits: 3, type: "WDD", completed: false },
-    { code: "CSE110", credits: 2, type: "CSE", completed: true },
-    { code: "CSE111", credits: 2, type: "CSE", completed: false }
+    { code: "WDD 130", credits: 3, completed: true, type: "WDD" },
+    { code: "WDD 131", credits: 3, completed: true, type: "WDD" },
+    { code: "WDD 231", credits: 3, completed: false, type: "WDD" },
+    { code: "CSE 110", credits: 2, completed: true, type: "CSE" },
+    { code: "CSE 111", credits: 2, completed: false, type: "CSE" }
 ];
 
-function displayCourses(courseList) {
-    const container = document.getElementById("courses");
+const container = document.querySelector("#courses");
+const totalCredits = document.querySelector("#totalCredits");
+
+function displayCourses(list) {
     container.innerHTML = "";
 
-    courseList.forEach(course => {
-        const div = document.createElement("div");
-        div.textContent = `${course.code} - ${course.credits} credits`;
+    list.forEach(course => {
+        const card = document.createElement("div");
+        card.textContent = `${course.code} (${course.credits} credits)`;
 
         if (course.completed) {
-            div.classList.add("completed");
+            card.classList.add("completed");
         }
 
-        container.appendChild(div);
+        container.appendChild(card);
     });
 
-    const total = courseList.reduce((sum, course) => sum + course.credits, 0);
-    document.getElementById("totalCredits").textContent =
-        "Total Credits: " + total;
+    const total = list.reduce((sum, c) => sum + c.credits, 0);
+    totalCredits.textContent = total;
 }
+
+// Buttons
+document.getElementById("all").onclick = () => displayCourses(courses);
+document.getElementById("wdd").onclick = () =>
+    displayCourses(courses.filter(c => c.type === "WDD"));
+document.getElementById("cse").onclick = () =>
+    displayCourses(courses.filter(c => c.type === "CSE"));
+
+// Load all initially
+displayCourses(courses);

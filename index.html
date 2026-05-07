@@ -1,3 +1,4 @@
+</html>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,9 +14,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <!-- JS -->
     <script src="scripts/navigation.js" defer></script>
@@ -26,12 +27,14 @@
 <body>
 
     <header>
-        <img src="images/logo.svg" alt="Site Logo" class="logo">
-        <span>Itoro Etim Akpan</span>
+        <div class="logo">
+            <img src="images/Images-vector.jpg" alt="Site Logo">
+            <span>Itoro Etim Akpan</span>
+        </div>
 
-        <button id="menuBtn">☰</button>
+        <button id="menu">☰</button>
 
-        <nav id="navMenu">
+        <nav>
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Chamber</a></li>
@@ -49,36 +52,31 @@
         </section>
 
         <section>
-            <h2>Courses</h2>
+            <h2>Web Certificate Courses</h2>
 
             <div class="buttons">
-                <button onclick="filterCourses('all')">All</button>
-                <button onclick="filterCourses('WDD')">WDD</button>
-                <button onclick="filterCourses('CSE')">CSE</button>
+                <button id="all">All</button>
+                <button id="wdd">WDD</button>
+                <button id="cse">CSE</button>
             </div>
 
             <div id="courses"></div>
-
-            <p id="totalCredits"></p>
+            <p>Total Credits: <span id="totalCredits"></span></p>
         </section>
 
         <section>
-            <h2>More Info</h2>
+            <h2>Additional Info</h2>
             <p>More content can be added here later.</p>
         </section>
-
     </main>
 
     <footer>
-        <div class="social">
+        <div class="socials">
             <a href="#">GitHub</a>
             <a href="#">LinkedIn</a>
         </div>
 
-        <p>
-            &copy; <span id="year"></span> Itoro Etim Akpan | Nigeria
-        </p>
-
+        <p>© <span id="year"></span> Itoro Etim Akpan | Nigeria</p>
         <p id="lastModified"></p>
     </footer>
 

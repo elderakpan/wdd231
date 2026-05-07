@@ -1,5 +1,6 @@
 @media (min-width: 768px) {
-    #menuBtn {
+    /* NAVIGATION */
+    #menu {
         display: none;
     }
     nav {
@@ -7,6 +8,41 @@
     }
     nav ul {
         display: flex;
-        gap: 1rem;
+        justify-content: flex-end;
+        gap: 20px;
+    }
+    nav a {
+        padding: 0.5rem 1rem;
+    }
+    /* HEADER LAYOUT */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    /* MAIN GRID */
+    main {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+    }
+    section:nth-child(2) {
+        grid-column: span 2;
+    }
+    /* COURSE GRID */
+    #courses {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    main {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    section:nth-child(2) {
+        grid-column: span 3;
+    }
+    #courses {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
