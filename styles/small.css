@@ -4,6 +4,8 @@
     --light: #f9fafb;
     --dark: #111827;
     --white: #ffffff;
+    --gray: #e5e7eb;
+    --success: #dcfce7;
 }
 
 * {
@@ -59,6 +61,7 @@ header {
 
 nav {
     background-color: var(--dark);
+    color: var(--white);
     display: none;
 }
 
@@ -67,8 +70,7 @@ nav.open {
 }
 
 nav ul {
-    margin: 0;
-    padding: 0;
+    list-style: none;
 }
 
 nav a {
@@ -77,9 +79,11 @@ nav a {
     color: var(--white);
     text-decoration: none;
     font-weight: 600;
+    transition: background-color 0.3s ease;
 }
 
-nav a:hover {
+nav a:hover,
+.active {
     background-color: var(--secondary);
 }
 
@@ -87,33 +91,34 @@ nav a:hover {
 /* MAIN */
 
 main {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 1rem;
 }
 
 h1 {
-    margin-bottom: 1rem;
     color: var(--primary);
+    margin-bottom: 1rem;
 }
 
 .card {
     background-color: var(--white);
-    padding: 1.5rem;
     margin-bottom: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 10%);
 }
 
 h2 {
-    margin-bottom: 1rem;
     color: var(--primary);
+    margin-bottom: 1rem;
 }
 
 .buttons {
     display: flex;
     gap: 1rem;
     margin: 1rem 0;
+    flex-wrap: wrap;
 }
 
 .buttons button {
@@ -121,29 +126,36 @@ h2 {
     color: var(--white);
     border: none;
     padding: 0.7rem 1rem;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
+    font-weight: 600;
 }
 
 .buttons button:hover {
     background-color: var(--secondary);
 }
 
+
+/* COURSES */
+
 .courses {
     display: grid;
+    grid-template-columns: 1fr;
     gap: 1rem;
+    margin-top: 1rem;
 }
 
 .course {
-    background-color: #e5e7eb;
+    background-color: var(--gray);
     padding: 1rem;
-    border-radius: 5px;
+    border-radius: 8px;
     text-align: center;
     font-weight: 600;
 }
 
 .completed {
-    background-color: #dcfce7;
+    background-color: var(--success);
+    border-left: 6px solid #166534;
 }
 
 

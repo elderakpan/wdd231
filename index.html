@@ -40,11 +40,11 @@
 
     <nav id="navigation">
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="#" class="active">Home</a></li>
             <li><a href="#">Chamber</a></li>
             <li><a href="#">Final</a></li>
-            <li><a href="#">GitHub</a></li>
-            <li><a href="#">LinkedIn</a></li>
+            <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+            <li><a href="https://linkedin.com/" target="_blank">LinkedIn</a></li>
         </ul>
     </nav>
 
@@ -56,7 +56,7 @@
             <h2>About Me</h2>
 
             <p>
-                This page demonstrates HTML, CSS, and JavaScript skills for WDD231. It is responsive, accessible, and follows web development standards.
+                This page demonstrates HTML, CSS, and JavaScript skills for WDD231. It follows accessibility, responsive design, and modern web development standards.
             </p>
         </section>
 
@@ -64,16 +64,12 @@
             <h2>Web Certificate Courses</h2>
 
             <div class="buttons">
-                <button>All</button>
-                <button>WDD</button>
-                <button>CSE</button>
+                <button id="all-btn">All</button>
+                <button id="wdd-btn">WDD</button>
+                <button id="cse-btn">CSE</button>
             </div>
 
-            <div class="courses">
-                <div class="course completed">WDD 130</div>
-                <div class="course completed">WDD 131</div>
-                <div class="course">CSE 110</div>
-            </div>
+            <div class="courses" id="course-container"></div>
 
             <p id="credits">
                 Total Credits: 0
