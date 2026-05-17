@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Akwa Ibom Chamber Directory</title>
+
+    <meta name="description" content="Akwa Ibom Chamber of Commerce Directory Page">
+    <meta name="author" content="Your Full Name">
+
+    <!-- Facebook Meta -->
+    <meta property="og:title" content="Akwa Ibom Chamber Directory">
+    <meta property="og:description" content="Business directory for Akwa Ibom Chamber of Commerce">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:url" content="https://username.github.io/wdd231/chamber/directory.html">
+
+    <link rel="icon" href="images/favicon.ico">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/small.css">
+    <link rel="stylesheet" href="css/larger.css">
+
+    <script src="scripts/directory.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+</head>
+
+<body>
+
+<header>
+    <img src="images/logo.png" alt="Chamber Logo" width="80">
+
+    <h1>Akwa Ibom Chamber of Commerce</h1>
+
+    <button id="menu"></button>
+
+    <nav>
+        <ul class="navigation">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="directory.html" class="active">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+            <li><a href="discover.html">Discover</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <h2>Business Directory</h2>
+
+    <div class="menu-buttons">
+        <button id="grid">Grid View</button>
+        <button id="list">List View</button>
+    </div>
+
+    <section id="members" class="grid"></section>
+
+</main>
+
+<footer>
+    <p>
+        Akwa Ibom Chamber of Commerce <br>
+        Ikot Ekpene Road, Uyo <br>
+        info@aibusiness.org <br>
+        +234 800 000 0000
+    </p>
+
+    <p>
+        &copy; <span id="year"></span> |
+        Your Full Name |
+        WDD 231
+    </p>
+
+    <p id="lastModified"></p>
+</footer>
+
+</body>
+</html>

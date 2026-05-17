@@ -1,0 +1,12 @@
+@media (min-width: 768px) {
+
+  nav {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
