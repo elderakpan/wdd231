@@ -1,78 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Akwa Ibom Chamber Directory featuring trusted local businesses and services for networking and growth.">
+    <meta name="description"
+        content="Akwa Ibom Chamber Directory featuring trusted businesses, organizations, and services across the region.">
 
-  <meta name="author" content="Itoro Etim Akpan">
+    <meta name="author"
+        content="Itoro Etim Akpan">
 
-  <title>Akwa Ibom Chamber Directory</title>
+    <title>Akwa Ibom Chamber Directory</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
 
-  <!-- Favicon -->
-  <link rel="icon" href="images/favicon.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Akwa Ibom Chamber Directory">
+    <!-- Favicon -->
+    <link rel="icon"
+        href="images/ibom-hotel-3-1.png">
 
-  <meta property="og:description" content="Discover trusted businesses and services in Akwa Ibom Chamber Directory.">
+    <!-- Open Graph -->
+    <meta property="og:title"
+        content="Akwa Ibom Chamber Directory">
 
-  <meta property="og:image" content="https://elderakpan.github.io/wdd231/chamber/images/preview.jpg">
+    <meta property="og:description"
+        content="Discover trusted businesses and networking opportunities in the Akwa Ibom Chamber Directory.">
 
-  <meta property="og:url" content="https://elderakpan.github.io/wdd231/chamber/directory.html">
+    <meta property="og:image"
+        content="https://elderakpan.github.io/wdd231/chamber/images/chamber.jpg">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/small.css">
-  <link rel="stylesheet" href="css/large.css">
+    <meta property="og:url"
+        content="https://elderakpan.github.io/wdd231/chamber/directory.html">
 
-  <!-- JavaScript -->
-  <script defer src="scripts/directory.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet"
+        href="styles/normalize.css">
+
+    <link rel="stylesheet"
+        href="styles/small.css">
+
+    <link rel="stylesheet"
+        href="styles/larger.css">
+
 </head>
 
 <body>
 
-<header>
+    <header class="site-header">
 
-  <div class="logo">Akwa Ibom Chamber</div>
+        <div class="logo">
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="directory.html" class="active">Directory</a>
-    <a href="join.html">Join</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+            <img src="images/chamber.jpg"
+                alt="Akwa Ibom Chamber Logo"
+                width="60"
+                height="60">
 
-  <div class="controls">
-    <button id="gridBtn">Grid</button>
-    <button id="listBtn">List</button>
-  </div>
+            <span>Akwa Ibom Chamber</span>
 
-</header>
+        </div>
 
-<main>
+        <button id="menu-button"
+            aria-label="Open Navigation Menu"
+            aria-expanded="false"
+            aria-controls="navigation">
 
-  <!-- ONLY ONE H1 -->
-  <h1>Directory</h1>
+            ☰
 
-  <section id="members" class="members grid">
-    <p>Loading members...</p>
-  </section>
+        </button>
 
-</main>
+    </header>
 
-<footer>
-  <p>&copy; <span id="year"></span> Itoro Etim Akpan</p>
-  <p>Last Modified: <span id="lastModified"></span></p>
-</footer>
+    <nav id="navigation">
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="directory.html"
+                    class="active">
+                    Directory
+                </a>
+            </li>
+
+            <li>
+                <a href="join.html">
+                    Join
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <main>
+
+        <h1>Akwa Ibom Chamber Directory</h1>
+
+        <section class="card">
+
+            <h2>Business Directory</h2>
+
+            <p>
+                Explore trusted businesses, organizations,
+                and services registered with the
+                Akwa Ibom Chamber of Commerce.
+            </p>
+
+            <div class="buttons">
+
+                <button id="gridBtn"
+                    type="button">
+                    Grid
+                </button>
+
+                <button id="listBtn"
+                    type="button">
+                    List
+                </button>
+
+            </div>
+
+            <section id="members"
+                class="members">
+
+                <p>
+                    Loading members...
+                </p>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>
+            &copy; <span id="year"></span>
+            Itoro Etim Akpan | WDD231
+        </p>
+
+        <p>
+            Last Modified:
+            <span id="lastModified"></span>
+        </p>
+
+    </footer>
+
+    <!-- JavaScript -->
+    <script defer
+        src="scripts/navigation.js"></script>
+
+    <script defer
+        src="scripts/date.js"></script>
+
+    <script defer
+        src="scripts/directory.js"></script>
 
 </body>
+
 </html>
