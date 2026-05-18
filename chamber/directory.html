@@ -5,11 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Akwa Ibom Chamber of Commerce business directory connecting trusted organizations and entrepreneurs.">
+    <!-- SEO -->
+    <meta name="description" content="Akwa Ibom Chamber business directory connecting trusted organizations, services, and entrepreneurs across the region.">
     <meta name="author" content="Itoro Etim Akpan">
 
     <title>Akwa Ibom Chamber Directory</title>
 
+    <!-- Google Fonts (FIXED) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon (FIXED - reliable absolute path) -->
+    <link rel="icon" type="image/png" href="https://elderakpan.github.io/wdd231/chamber/images/ibom-hotel-3-1.png">
+
+    <!-- Open Graph (FIXED) -->
+    <meta property="og:title" content="Akwa Ibom Chamber Business Directory">
+    <meta property="og:description" content="Explore trusted businesses, services, and networking opportunities across Akwa Ibom State through the official chamber business directory.">
+    <meta property="og:image" content="https://elderakpan.github.io/wdd231/chamber/images/akwa1.jpg">
+    <meta property="og:url" content="https://elderakpan.github.io/wdd231/chamber/directory.html">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
@@ -17,46 +33,57 @@
 
 <body>
 
-<header class="site-header">
-    <div class="logo">
-        <img src="images/chamber.jpg" alt="Chamber Logo" width="60">
-        <span>Akwa Ibom Chamber</span>
-    </div>
-</header>
-
-<nav id="navigation">
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a class="active" href="directory.html">Directory</a></li>
-        <li><a href="join.html">Join</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
-
-<main>
-    <h1>Business Directory</h1>
-
-    <section class="card">
-        <h2>Members</h2>
-
-        <div class="buttons">
-            <button id="gridBtn" type="button">Grid</button>
-            <button id="listBtn" type="button">List</button>
+    <header class="site-header">
+        <div class="logo">
+            <img src="images/chamber.jpg" alt="Akwa Ibom Chamber Logo" width="60" height="60">
+            <span>Akwa Ibom Chamber</span>
         </div>
 
-        <section id="members" class="members">
-            <p>Loading members...</p>
+        <button id="menu-button" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="navigation">
+            ☰
+        </button>
+    </header>
+
+    <nav id="navigation" aria-label="Main Navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="directory.html" class="active">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Akwa Ibom Chamber Directory</h1>
+
+        <section class="card">
+            <h2>Business Directory</h2>
+
+            <p>
+                Explore trusted businesses, organizations, and services registered with the Akwa Ibom Chamber.
+            </p>
+
+            <div class="buttons">
+                <button id="gridBtn" type="button">Grid</button>
+                <button id="listBtn" type="button">List</button>
+            </div>
+
+            <section id="members" class="members">
+                <p>Loading members...</p>
+            </section>
         </section>
-    </section>
-</main>
+    </main>
 
-<footer>
-    <p>&copy; <span id="year"></span> Akwa Ibom Chamber</p>
-</footer>
+    <footer>
+        <p>&copy; <span id="year"></span> Itoro Etim Akpan | WDD231</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
 
-<script src="scripts/navigation.js"></script>
-<script src="scripts/date.js"></script>
-<script src="scripts/directory.js"></script>
+    <!-- SCRIPTS (FIXED ORDER + DEFER) -->
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/directory.js" defer></script>
 
 </body>
+
 </html>
