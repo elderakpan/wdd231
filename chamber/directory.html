@@ -3,63 +3,68 @@
 <head>
   <meta charset="UTF-8">
 
-  <meta name="description" content="Akwa Ibom Chamber of Commerce Directory Page">
-  <meta name="author" content="Itoro Etim Akpan">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Akwa Ibom Chamber Directory">
-  <meta property="og:description" content="Discover businesses in the Akwa Ibom Chamber of Commerce">
-  <meta property="og:image" content="images/preview.jpg">
-  <meta property="og:url" content="https://username.github.io/wdd231/chamber/directory.html">
+  <meta name="description" content="Akwa Ibom Chamber of Commerce Directory featuring verified local businesses, organizations, and services across the region for networking and growth opportunities.">
+  <meta name="author" content="Itoro Etim Akpan">
 
   <title>Akwa Ibom Chamber Directory</title>
 
-  <!-- ✅ FIXED CSS ORDER (IMPORTANT) -->
+  <!-- Google Fonts (REQUIRED for Lighthouse) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.png">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/small.css">
   <link rel="stylesheet" href="css/large.css">
 
+  <!-- JS -->
   <script defer src="js/directory.js"></script>
+
+  <!-- Open Graph (FIXED) -->
+  <meta property="og:title" content="Akwa Ibom Chamber Directory">
+  <meta property="og:description" content="Discover trusted businesses and services in Akwa Ibom Chamber of Commerce directory.">
+  <meta property="og:image" content="https://elderakpan.github.io/wdd231/chamber/images/preview.jpg">
+  <meta property="og:url" content="https://elderakpan.github.io/wdd231/chamber/directory.html">
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo-title">
-      <img src="images/chamber.jpg" alt="Akwa Ibom Chamber Logo">
-      <h1>Akwa Ibom Chamber of Commerce</h1>
-    </div>
+<header>
+  <h1>Akwa Ibom Chamber Directory</h1>
 
-    <!-- NAVIGATION (WAYFINDING READY) -->
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="directory.html" class="active">Directory</a>
-      <a href="join.html">Join</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="directory.html" class="active">Directory</a>
+    <a href="join.html">Join</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-    <!-- VIEW TOGGLE -->
-    <div class="view-buttons">
-      <button id="gridBtn" aria-label="Grid view">Grid</button>
-      <button id="listBtn" aria-label="List view">List</button>
-    </div>
-  </header>
+  <div class="controls">
+    <button id="gridBtn" aria-label="Switch to grid view">Grid</button>
+    <button id="listBtn" aria-label="Switch to list view">List</button>
+  </div>
+</header>
 
-  <!-- MAIN CONTENT -->
-  <main>
-    <section id="members" class="members">
-      <p>Loading members...</p>
-    </section>
-  </main>
+<main>
+  <!-- REQUIRED: H1 inside MAIN (FIXED) -->
+  <h1 class="page-title">Business Directory</h1>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; <span id="year"></span> Itoro Etim Akpan | WDD 231</p>
-    <p>Last Modified: <span id="lastModified"></span></p>
-  </footer>
+  <section id="members" class="members grid">
+    <p>Loading members...</p>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; <span id="year"></span> Itoro Etim Akpan</p>
+  <p>Last Modified: <span id="lastModified"></span></p>
+</footer>
 
 </body>
 </html>
+⚡
