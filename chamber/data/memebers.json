@@ -7,48 +7,54 @@
     "image": "images/member1.jpg",
     "membership": "Gold"
   },
+
   {
-    "name": "Ibom Business Alliance",
-    "address": "Uyo City",
+    "name": "Uyo Business Alliance",
+    "address": "Uyo Main City",
     "phone": "+234 801 222 2222",
     "website": "https://example.com",
     "image": "images/member2.jpg",
     "membership": "Silver"
   },
+
   {
-    "name": "Eket Industrial Group",
-    "address": "Eket",
+    "name": "Ibom Traders Association",
+    "address": "Ikot Ekpene",
     "phone": "+234 801 333 3333",
     "website": "https://example.com",
     "image": "images/member3.jpg",
     "membership": "Bronze"
   },
+
   {
-    "name": "Oron Maritime Chamber",
-    "address": "Oron",
+    "name": "Eket Industrial Group",
+    "address": "Eket",
     "phone": "+234 801 444 4444",
     "website": "https://example.com",
     "image": "images/member4.jpg",
     "membership": "Gold"
   },
+
   {
-    "name": "Ikot Ekpene Traders",
-    "address": "Ikot Ekpene",
+    "name": "Ibom Agriculture Network",
+    "address": "Abak",
     "phone": "+234 801 555 5555",
     "website": "https://example.com",
     "image": "images/member5.jpg",
     "membership": "Silver"
   },
+
   {
-    "name": "Abak Farmers Association",
-    "address": "Abak",
+    "name": "Oron Maritime Group",
+    "address": "Oron",
     "phone": "+234 801 666 6666",
     "website": "https://example.com",
     "image": "images/member6.jpg",
     "membership": "Bronze"
   },
+
   {
-    "name": "Ikot Abasi Enterprise Group",
+    "name": "Ikot Abasi Enterprise",
     "address": "Ikot Abasi",
     "phone": "+234 801 777 7777",
     "website": "https://example.com",

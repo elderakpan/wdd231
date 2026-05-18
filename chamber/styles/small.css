@@ -1,67 +1,161 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-  font-family: "Roboto", sans-serif;
-  margin: 0;
-  background: #fff;
+    font-family: "Poppins", sans-serif;
+    background-color: #f4f4f4;
+    color: #111;
+    line-height: 1.6;
 }
 
-/* REQUIRED FLEXBOX */
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #0b2a4a;
-  color: white;
-  padding: 1rem;
-  gap: 10px;
+/* HEADER */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #0b2a4a;
+    color: white;
+
+    padding: 1rem;
 }
 
-/* NAV */
-nav {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    font-size: 1.1rem;
+    font-weight: 700;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
+.logo img {
+    border-radius: 50%;
 }
 
-/* CONTROLS FLEX */
-.controls {
-  display: flex;
-  gap: 10px;
+/* MENU BUTTON */
+#menu-button {
+    background: none;
+    border: none;
+    color: white;
+
+    font-size: 2rem;
+    cursor: pointer;
 }
 
-/* GRID VIEW */
-.members.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  padding: 1rem;
+/* NAVIGATION */
+#navigation {
+    display: none;
+    background-color: #12395f;
 }
 
-/* LIST VIEW */
-.members.list {
-  display: block;
+#navigation.open {
+    display: block;
 }
 
-.member-card {
-  border: 1px solid #ddd;
-  padding: 1rem;
-  margin: 10px;
-  border-radius: 10px;
-  background: #fafafa;
+#navigation ul {
+    list-style: none;
 }
 
-.member-card img {
-  width: 100%;
+#navigation li {
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+#navigation a {
+    display: block;
+    padding: 1rem;
+
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+#navigation a:hover,
+#navigation a.active {
+    background-color: #ffffff;
+    color: #0b2a4a;
+}
+
+/* MAIN */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+h1 {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* CARDS */
+.card {
+    background-color: white;
+
+    border-radius: 10px;
+
+    padding: 1rem;
+
+    margin-bottom: 1.5rem;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+    margin-bottom: 1rem;
+    color: #0b2a4a;
+}
+
+/* BUTTONS */
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    margin: 1rem 0;
+}
+
+.buttons button {
+    padding: 0.7rem 1rem;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: #0b2a4a;
+    color: white;
+
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: #12395f;
+}
+
+/* COURSES */
+.courses {
+    display: grid;
+    gap: 1rem;
+}
+
+.course-card {
+    background-color: #e9eef4;
+
+    border-left: 5px solid #0b2a4a;
+
+    padding: 1rem;
+
+    border-radius: 6px;
 }
 
 /* FOOTER */
 footer {
-  text-align: center;
-  background: #0b2a4a;
-  color: white;
-  padding: 1rem;
+    text-align: center;
+
+    background-color: #0b2a4a;
+    color: white;
+
+    padding: 1rem;
 }

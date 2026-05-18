@@ -5,38 +5,44 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Akwa Ibom Chamber of Commerce Directory featuring verified local businesses, organizations, and services across the region for networking and growth opportunities.">
+  <meta name="description" content="Akwa Ibom Chamber Directory featuring trusted local businesses and services for networking and growth.">
+
   <meta name="author" content="Itoro Etim Akpan">
 
   <title>Akwa Ibom Chamber Directory</title>
 
-  <!-- Google Fonts (REQUIRED for Lighthouse) -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Favicon -->
   <link rel="icon" href="images/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Akwa Ibom Chamber Directory">
+
+  <meta property="og:description" content="Discover trusted businesses and services in Akwa Ibom Chamber Directory.">
+
+  <meta property="og:image" content="https://elderakpan.github.io/wdd231/chamber/images/preview.jpg">
+
+  <meta property="og:url" content="https://elderakpan.github.io/wdd231/chamber/directory.html">
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/small.css">
   <link rel="stylesheet" href="css/large.css">
 
-  <!-- JS -->
-  <script defer src="js/directory.js"></script>
-
-  <!-- Open Graph (FIXED) -->
-  <meta property="og:title" content="Akwa Ibom Chamber Directory">
-  <meta property="og:description" content="Discover trusted businesses and services in Akwa Ibom Chamber of Commerce directory.">
-  <meta property="og:image" content="https://elderakpan.github.io/wdd231/chamber/images/preview.jpg">
-  <meta property="og:url" content="https://elderakpan.github.io/wdd231/chamber/directory.html">
+  <!-- JavaScript -->
+  <script defer src="scripts/directory.js"></script>
 </head>
 
 <body>
 
 <header>
-  <h1>Akwa Ibom Chamber Directory</h1>
+
+  <div class="logo">Akwa Ibom Chamber</div>
 
   <nav>
     <a href="index.html">Home</a>
@@ -46,18 +52,21 @@
   </nav>
 
   <div class="controls">
-    <button id="gridBtn" aria-label="Switch to grid view">Grid</button>
-    <button id="listBtn" aria-label="Switch to list view">List</button>
+    <button id="gridBtn">Grid</button>
+    <button id="listBtn">List</button>
   </div>
+
 </header>
 
 <main>
-  <!-- REQUIRED: H1 inside MAIN (FIXED) -->
-  <h1 class="page-title">Business Directory</h1>
+
+  <!-- ONLY ONE H1 -->
+  <h1>Directory</h1>
 
   <section id="members" class="members grid">
     <p>Loading members...</p>
   </section>
+
 </main>
 
 <footer>
@@ -67,4 +76,3 @@
 
 </body>
 </html>
-⚡
