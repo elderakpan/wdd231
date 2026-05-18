@@ -4,72 +4,51 @@ const listBtn = document.querySelector("#listBtn");
 
 let membersData = [];
 
-// Fetch JSON data (ASYNC/AWAIT requirement)
+// Fetch JSON (FIXES YOUR ERROR)
 async function getMembers() {
     try {
         const response = await fetch("data/members.json");
-
-        if (!response.ok) {
-            throw new Error("Failed to load members.json");
-        }
+        if (!response.ok) throw new Error("Unable to load members.json");
 
         membersData = await response.json();
         displayMembers(membersData);
 
     } catch (error) {
-        membersContainer.innerHTML =
-            `<p class="error">Unable to load members data.</p>`;
+        membersContainer.innerHTML = `<p>Error loading directory data.</p>`;
         console.error(error);
     }
 }
 
-// Display members (GRID default)
+// DISPLAY MEMBERS
 function displayMembers(members) {
     membersContainer.innerHTML = "";
 
     members.forEach(member => {
-        const card = document.createElement("article");
+        const card = document.createElement("div");
         card.classList.add("member-card");
 
         card.innerHTML = `
-            <img src="${member.image}" 
-                 alt="${member.name} logo"
-                 loading="lazy"
-                 width="300"
-                 height="200">
-
             <h3>${member.name}</h3>
-
-            <p>${member.address}</p>
-
-            <p>${member.phone}</p>
-
-            <a href="${member.website}" target="_blank" rel="noopener">
-                Visit Website
-            </a>
-
-            <p class="membership">
-                ${member.membership} Member
-            </p>
+            <p><strong>Address:</strong> ${member.address}</p>
+            <p><strong>Phone:</strong> ${member.phone}</p>
+            <p><strong>Membership:</strong> ${member.membership}</p>
+            <a href="${member.website}" target="_blank">Visit Website</a>
         `;
 
         membersContainer.appendChild(card);
     });
-
-    membersContainer.className = "members grid";
 }
 
-// GRID VIEW
+// GRID / LIST TOGGLE
 gridBtn.addEventListener("click", () => {
-    membersContainer.classList.remove("list");
     membersContainer.classList.add("grid");
+    membersContainer.classList.remove("list");
 });
 
-// LIST VIEW
 listBtn.addEventListener("click", () => {
-    membersContainer.classList.remove("grid");
     membersContainer.classList.add("list");
+    membersContainer.classList.remove("grid");
 });
 
-// Run on load
+// INIT
 getMembers();

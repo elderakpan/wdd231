@@ -1,64 +1,23 @@
 [
   {
-    "name": "Akwa Ibom Tech Hub",
-    "address": "Uyo, Akwa Ibom",
-    "phone": "+234 801 111 1111",
+    "name": "Ibom Airlines",
+    "address": "Uyo, Akwa Ibom State",
+    "phone": "+234 800 123 4567",
     "website": "https://example.com",
-    "image": "images/member1.jpg",
     "membership": "Gold"
   },
-
   {
-    "name": "Uyo Business Alliance",
-    "address": "Uyo Main City",
-    "phone": "+234 801 222 2222",
+    "name": "Dakkada Ventures",
+    "address": "Ikot Ekpene, Akwa Ibom State",
+    "phone": "+234 800 222 3333",
     "website": "https://example.com",
-    "image": "images/member2.jpg",
     "membership": "Silver"
   },
-
   {
-    "name": "Ibom Traders Association",
-    "address": "Ikot Ekpene",
-    "phone": "+234 801 333 3333",
+    "name": "Eket Oil Services Ltd",
+    "address": "Eket, Akwa Ibom State",
+    "phone": "+234 800 444 5555",
     "website": "https://example.com",
-    "image": "images/member3.jpg",
-    "membership": "Bronze"
-  },
-
-  {
-    "name": "Eket Industrial Group",
-    "address": "Eket",
-    "phone": "+234 801 444 4444",
-    "website": "https://example.com",
-    "image": "images/member4.jpg",
-    "membership": "Gold"
-  },
-
-  {
-    "name": "Ibom Agriculture Network",
-    "address": "Abak",
-    "phone": "+234 801 555 5555",
-    "website": "https://example.com",
-    "image": "images/member5.jpg",
-    "membership": "Silver"
-  },
-
-  {
-    "name": "Oron Maritime Group",
-    "address": "Oron",
-    "phone": "+234 801 666 6666",
-    "website": "https://example.com",
-    "image": "images/member6.jpg",
-    "membership": "Bronze"
-  },
-
-  {
-    "name": "Ikot Abasi Enterprise",
-    "address": "Ikot Abasi",
-    "phone": "+234 801 777 7777",
-    "website": "https://example.com",
-    "image": "images/member7.jpg",
     "membership": "Gold"
   }
 ]
