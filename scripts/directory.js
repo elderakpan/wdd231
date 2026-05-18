@@ -2,23 +2,17 @@ const membersContainer = document.querySelector("#members");
 const gridBtn = document.querySelector("#gridBtn");
 const listBtn = document.querySelector("#listBtn");
 
-let membersData = [];
-
-// Load data
-async function getMembers() {
+async function loadMembers() {
     try {
-        const response = await fetch("data/members.json");
-        if (!response.ok) throw new Error("Failed to load members data");
-
-        membersData = await response.json();
-        displayMembers(membersData);
+        const response = await fetch("./data/members.json"); // FIXED PATH
+        const data = await response.json();
+        displayMembers(data);
     } catch (error) {
-        membersContainer.innerHTML = "<p>Unable to load members.</p>";
+        membersContainer.innerHTML = "<p>Failed to load members.</p>";
         console.error(error);
     }
 }
 
-// Display members
 function displayMembers(members) {
     membersContainer.innerHTML = "";
 
@@ -28,27 +22,25 @@ function displayMembers(members) {
 
         card.innerHTML = `
             <h3>${member.name}</h3>
-            <p><strong>Address:</strong> ${member.address}</p>
-            <p><strong>Phone:</strong> ${member.phone}</p>
-            <p><strong>Membership:</strong> ${member.membership}</p>
-            <a href="${member.website}" target="_blank">Visit Website</a>
+            <p>${member.address}</p>
+            <p>${member.phone}</p>
+            <p>${member.membership}</p>
+            <a href="${member.website}" target="_blank">Visit Site</a>
         `;
 
         membersContainer.appendChild(card);
     });
 }
 
-// Grid view
+// GRID / LIST TOGGLE
 gridBtn.addEventListener("click", () => {
     membersContainer.classList.add("grid");
     membersContainer.classList.remove("list");
 });
 
-// List view
 listBtn.addEventListener("click", () => {
     membersContainer.classList.add("list");
     membersContainer.classList.remove("grid");
 });
 
-// Init
-getMembers();
+loadMembers();

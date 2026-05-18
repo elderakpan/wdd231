@@ -1,22 +1,22 @@
 [
   {
-    "name": "Ibom Airlines",
-    "address": "Uyo, Akwa Ibom State",
+    "name": "Ibom Tech Hub",
+    "address": "Uyo, Akwa Ibom",
     "phone": "+234 800 123 4567",
     "website": "https://example.com",
     "membership": "Gold"
   },
   {
-    "name": "Dakkada Ventures",
-    "address": "Ikot Ekpene, Akwa Ibom State",
+    "name": "Akwa Foods Ltd",
+    "address": "Eket, Akwa Ibom",
     "phone": "+234 800 222 3333",
     "website": "https://example.com",
     "membership": "Silver"
   },
   {
-    "name": "Eket Oil Services Ltd",
-    "address": "Eket, Akwa Ibom State",
-    "phone": "+234 800 444 5555",
+    "name": "Green Energy Nigeria",
+    "address": "Uyo, Akwa Ibom",
+    "phone": "+234 800 999 1111",
     "website": "https://example.com",
     "membership": "Gold"
   }
