@@ -1,0 +1,14 @@
+@media (min-width: 768px) {
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  nav {
+    gap: 2rem;
+  }
+
+  .card {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #eef3f9;
+  color: #222;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(135deg, #004080, #0066cc);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.4rem 0.8rem;
+}
+
+nav a:hover {
+  background: white;
+  color: #004080;
+  border-radius: 5px;
+}
+
+/* BUTTONS */
+.buttons {
+  margin-top: 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background: white;
+  color: #004080;
+  font-weight: bold;
+}
+
+/* MEMBERS */
+#members {
+  padding: 1rem;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* CARD */
+.card {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* LIST VIEW */
+.list {
+  display: block;
+}
+
+.list .card {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.list .card img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  background: #004080;
+  color: white;
+  padding: 1rem;
+  margin-top: 2rem;
+}
