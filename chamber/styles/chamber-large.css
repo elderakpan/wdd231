@@ -1,11 +1,37 @@
+/* ---------- LARGE VIEW ---------- */
 @media screen and (min-width: 768px) {
 
+    #menu-button {
+        display: none;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .navigation li a {
+        border: none;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     .home-grid {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
-    .spotlight-container {
-        grid-column: span 1;
+    .spotlight-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 
+    footer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+    }
 }

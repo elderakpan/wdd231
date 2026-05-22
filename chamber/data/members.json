@@ -19,5 +19,40 @@
     "phone": "+234 800 999 1111",
     "website": "https://example.com",
     "membership": "Gold"
-  }
+  },
+  {
+        "name": "Ibom Tech Solutions",
+        "membership": "Gold",
+        "phone": "+234 800 111 1111",
+        "address": "12 Wellington Bassey Way, Uyo",
+        "website": "https://ibomtech.com",
+        "image": "images/business1.webp"
+    },
+
+    {
+        "name": "Akwa Farms Ltd",
+        "membership": "Silver",
+        "phone": "+234 800 222 2222",
+        "address": "45 Oron Road, Uyo",
+        "website": "https://akwafarms.com",
+        "image": "images/business2.webp"
+    },
+
+    {
+        "name": "Ndon Bakery",
+        "membership": "Gold",
+        "phone": "+234 800 333 3333",
+        "address": "20 Ikot Ekpene Road, Uyo",
+        "website": "https://ndonbakery.com",
+        "image": "images/business3.webp"
+    },
+
+    {
+        "name": "SouthLink Logistics",
+        "membership": "Silver",
+        "phone": "+234 800 444 4444",
+        "address": "11 Aka Road, Uyo",
+        "website": "https://southlinklogistics.com",
+        "image": "images/business4.webp"
+    }
 ]

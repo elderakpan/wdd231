@@ -1,3 +1,14 @@
+/* ---------- ROOT VARIABLES ---------- */
+:root {
+    --primary-color: #004080;
+    --secondary-color: #f4f4f4;
+    --accent-color: #ff9900;
+    --text-color: #222;
+    --white: #ffffff;
+    --max-width: 1200px;
+}
+
+/* ---------- GENERAL ---------- */
 * {
     margin: 0;
     padding: 0;
@@ -5,95 +16,277 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
 }
 
-header {
-    background: #003366;
-    color: white;
-    padding: 1rem;
+img {
+    max-width: 100%;
+    display: block;
+}
 
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* ---------- HEADER ---------- */
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem;
+}
+
+.logo-container {
+    display: flex;
     align-items: center;
     gap: 1rem;
 }
 
-.logo {
-    width: 70px;
+.logo-container h1 {
+    font-size: 1.5rem;
 }
 
+#menu-button {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+/* ---------- NAVIGATION ---------- */
 .navigation {
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.navigation.open {
     display: flex;
-    gap: 1rem;
 }
 
-.navigation a {
-    color: white;
+.navigation li a {
+    display: block;
+    padding: 1rem;
     text-decoration: none;
+    color: var(--white);
+    background-color: #003366;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
-.navigation a.active {
-    font-weight: bold;
-    text-decoration: underline;
+.navigation li a:hover,
+.navigation li a.active {
+    background-color: var(--accent-color);
+    color: black;
 }
 
+/* ---------- HERO ---------- */
 .hero {
     position: relative;
+    margin-bottom: 2rem;
 }
 
 .hero img {
     width: 100%;
-    display: block;
+    border-radius: 10px;
 }
 
 .hero-text {
     position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
-    color: white;
+    top: 20%;
+    left: 5%;
+    background-color: rgba(0,0,0,0.6);
+    color: var(--white);
+    padding: 1rem;
+    border-radius: 10px;
+    max-width: 400px;
+}
+
+.hero-text h2 {
+    margin-bottom: 1rem;
 }
 
 .cta-button {
     display: inline-block;
     margin-top: 1rem;
     padding: 0.8rem 1.5rem;
-    background: #ff9900;
+    background-color: var(--accent-color);
     color: black;
     text-decoration: none;
-    border-radius: 5px;
     font-weight: bold;
+    border-radius: 5px;
 }
 
+.cta-button:hover {
+    background-color: #ffaa33;
+}
+
+/* ---------- HOME GRID ---------- */
 .home-grid {
     display: grid;
     gap: 1rem;
-    padding: 1rem;
+    margin-bottom: 2rem;
 }
 
+/* ---------- CARDS ---------- */
 .card {
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    background-color: var(--white);
     padding: 1rem;
-    background: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.spotlight {
+.card h2 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.card article {
+    margin-bottom: 1rem;
+}
+
+/* ---------- WEATHER ---------- */
+.forecast ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.forecast li {
+    margin-bottom: 0.5rem;
+}
+
+/* ---------- SPOTLIGHTS ---------- */
+.spotlights {
+    margin-bottom: 2rem;
+}
+
+.spotlights h2 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.spotlight-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.spotlight-card {
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.spotlight-card img {
+    width: 120px;
+    margin: 0 auto 1rem;
+}
+
+/* =========================
+   DIRECTORY PAGE LAYOUT
+========================= */
+
+.directory-header {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.view-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.view-controls button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: #004080;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.view-controls button:hover {
+    background: #ff9900;
+    color: black;
+}
+
+/* GRID VIEW (DEFAULT like HOME cards) */
+.directory-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+/* BUSINESS CARD (MATCH HOME CARD STYLE) */
+.member-card {
     background: white;
     padding: 1rem;
-    margin-top: 1rem;
-    border-radius: 10px;
-}
-
-.spotlight img {
-    width: 100px;
-}
-
-footer {
-    background: #003366;
-    color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
     text-align: center;
-    padding: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+}
+
+.member-card img {
+    width: 120px;
+    height: auto;
+    margin: 0.5rem auto;
+}
+
+/* TEXT CLEANING */
+.member-card h3 {
+    color: #004080;
+    margin-bottom: 0.5rem;
+}
+
+.member-card p {
+    margin: 0.3rem 0;
+}
+
+/* LIST VIEW (clean horizontal look) */
+.directory-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.directory-list .member-card {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    text-align: left;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.footer-info,
+.social-links,
+.footer-meta {
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
