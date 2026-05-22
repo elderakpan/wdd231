@@ -1,54 +1,82 @@
 const container = document.querySelector("#directory-container");
 const gridBtn = document.querySelector("#grid-view");
 const listBtn = document.querySelector("#list-view");
+const searchInput = document.querySelector("#search");
 
-const url = "data/members.json";
+let membersData = [];
 
+// ==============================
+// FETCH MEMBERS JSON
+// ==============================
 async function getMembers() {
-    const response = await fetch(url);
-    const members = await response.json();
-    displayMembers(members);
+    try {
+        const response = await fetch("data/members.json");
+        membersData = await response.json();
+
+        displayMembers(membersData);
+
+    } catch (error) {
+        console.error("Error loading members:", error);
+        container.innerHTML = "<p>Unable to load directory data.</p>";
+    }
 }
 
-function displayMembers(members) {
 
+// ==============================
+// DISPLAY MEMBERS
+// ==============================
+function displayMembers(members) {
     container.innerHTML = "";
 
     members.forEach(member => {
-
-        const card = document.createElement("section");
+        const card = document.createElement("div");
         card.classList.add("member-card");
 
         card.innerHTML = `
+            <img src="${member.image}" alt="${member.name}" loading="lazy">
             <h3>${member.name}</h3>
-
-            <img src="${member.image}"
-                 alt="${member.name} logo"
-                 loading="lazy">
-
-            <p><strong>Address:</strong> ${member.address}</p>
-            <p><strong>Phone:</strong> ${member.phone}</p>
-
-            <a href="${member.website}" target="_blank" rel="noopener noreferrer">
-                Visit Website
-            </a>
-
             <p><strong>Membership:</strong> ${member.membership}</p>
+            <p>${member.address}</p>
+            <p>${member.phone}</p>
+            <a href="${member.website}" target="_blank">Visit Website</a>
         `;
 
         container.appendChild(card);
     });
 }
 
-/* VIEW SWITCH */
-gridBtn.addEventListener("click", () => {
+
+// ==============================
+// VIEW TOGGLES (GRID / LIST)
+// ==============================
+gridBtn?.addEventListener("click", () => {
     container.classList.add("directory-grid");
     container.classList.remove("directory-list");
 });
 
-listBtn.addEventListener("click", () => {
+listBtn?.addEventListener("click", () => {
     container.classList.add("directory-list");
     container.classList.remove("directory-grid");
 });
 
+
+// ==============================
+// SEARCH FUNCTION
+// ==============================
+searchInput?.addEventListener("input", (e) => {
+    const value = e.target.value.toLowerCase();
+
+    const filtered = membersData.filter(member =>
+        member.name.toLowerCase().includes(value) ||
+        member.address.toLowerCase().includes(value) ||
+        member.membership.toLowerCase().includes(value)
+    );
+
+    displayMembers(filtered);
+});
+
+
+// ==============================
+// INIT
+// ==============================
 getMembers();

@@ -1,10 +1,12 @@
 /* ---------- ROOT VARIABLES ---------- */
 :root {
-    --primary-color: #004080;
-    --secondary-color: #f4f4f4;
-    --accent-color: #ff9900;
-    --text-color: #222;
+    --primary: #1e3a8a;
+    --secondary: #2563eb;
+    --accent: #ff9900;
+    --dark: #111827;
+    --light: #f9fafb;
     --white: #ffffff;
+    --text-color: #111827;
     --max-width: 1200px;
 }
 
@@ -18,7 +20,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
-    background-color: var(--secondary-color);
+    background: var(--light);
     color: var(--text-color);
 }
 
@@ -35,7 +37,7 @@ main {
 
 /* ---------- HEADER ---------- */
 header {
-    background-color: var(--primary-color);
+    background: var(--primary);
     color: var(--white);
     padding: 1rem;
 }
@@ -76,13 +78,13 @@ header {
     padding: 1rem;
     text-decoration: none;
     color: var(--white);
-    background-color: #003366;
+    background: #003366;
     border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
 .navigation li a:hover,
 .navigation li a.active {
-    background-color: var(--accent-color);
+    background: var(--accent);
     color: black;
 }
 
@@ -101,7 +103,7 @@ header {
     position: absolute;
     top: 20%;
     left: 5%;
-    background-color: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.6);
     color: var(--white);
     padding: 1rem;
     border-radius: 10px;
@@ -116,7 +118,7 @@ header {
     display: inline-block;
     margin-top: 1rem;
     padding: 0.8rem 1.5rem;
-    background-color: var(--accent-color);
+    background: var(--accent);
     color: black;
     text-decoration: none;
     font-weight: bold;
@@ -124,10 +126,10 @@ header {
 }
 
 .cta-button:hover {
-    background-color: #ffaa33;
+    background: #ffaa33;
 }
 
-/* ---------- HOME GRID ---------- */
+/* ---------- GRID ---------- */
 .home-grid {
     display: grid;
     gap: 1rem;
@@ -136,7 +138,7 @@ header {
 
 /* ---------- CARDS ---------- */
 .card {
-    background-color: var(--white);
+    background: var(--white);
     padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -144,20 +146,16 @@ header {
 
 .card h2 {
     margin-bottom: 1rem;
-    color: var(--primary-color);
-}
-
-.card article {
-    margin-bottom: 1rem;
+    color: var(--primary);
 }
 
 /* ---------- WEATHER ---------- */
-.forecast ul {
+#forecast-list {
     list-style: none;
     padding-left: 0;
 }
 
-.forecast li {
+#forecast-list li {
     margin-bottom: 0.5rem;
 }
 
@@ -168,7 +166,7 @@ header {
 
 .spotlights h2 {
     margin-bottom: 1rem;
-    color: var(--primary-color);
+    color: var(--primary);
 }
 
 .spotlight-grid {
@@ -177,22 +175,14 @@ header {
 }
 
 .spotlight-card {
-    background-color: var(--white);
+    background: var(--white);
     padding: 1rem;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.spotlight-card img {
-    width: 120px;
-    margin: 0 auto 1rem;
-}
-
-/* =========================
-   DIRECTORY PAGE LAYOUT
-========================= */
-
+/* ---------- DIRECTORY ---------- */
 .directory-header {
     text-align: center;
     margin: 1.5rem 0;
@@ -215,48 +205,34 @@ header {
 }
 
 .view-controls button:hover {
-    background: #ff9900;
+    background: var(--accent);
     color: black;
 }
 
-/* GRID VIEW (DEFAULT like HOME cards) */
 .directory-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
 }
 
-/* BUSINESS CARD (MATCH HOME CARD STYLE) */
 .member-card {
     background: white;
     padding: 1rem;
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     text-align: center;
-    transition: transform 0.2s ease;
 }
 
 .member-card:hover {
     transform: translateY(-5px);
+    transition: 0.2s;
 }
 
 .member-card img {
     width: 120px;
-    height: auto;
-    margin: 0.5rem auto;
+    margin: 0 auto 0.5rem;
 }
 
-/* TEXT CLEANING */
-.member-card h3 {
-    color: #004080;
-    margin-bottom: 0.5rem;
-}
-
-.member-card p {
-    margin: 0.3rem 0;
-}
-
-/* LIST VIEW (clean horizontal look) */
 .directory-list {
     display: flex;
     flex-direction: column;
@@ -273,7 +249,7 @@ header {
 
 /* ---------- FOOTER ---------- */
 footer {
-    background-color: var(--primary-color);
+    background: var(--primary);
     color: var(--white);
     padding: 2rem 1rem;
     text-align: center;

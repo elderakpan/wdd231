@@ -1,58 +1,41 @@
-const spotlightContainer =
-    document.querySelector("#spotlights");
+const container = document.querySelector("#spotlight-container");
+const url = "data/members.json";
 
-async function getSpotlights() {
+async function loadMembers() {
+    const res = await fetch(url);
+    const members = await res.json();
 
-    const response =
-        await fetch("data/members.json");
+    const eligible = members.filter(m =>
+        m.membership === "Gold" || m.membership === "Silver"
+    );
 
-    const data = await response.json();
+    const shuffled = eligible.sort(() => Math.random() - 0.5);
 
-    const filteredMembers =
-        data.members.filter(member =>
-            member.membership === "Gold" ||
-            member.membership === "Silver"
-        );
+    const selected = shuffled.slice(0, 3);
 
-    const randomMembers =
-        filteredMembers.sort(() => 0.5 - Math.random())
-        .slice(0, 3);
+    container.innerHTML = "";
 
-    displaySpotlights(randomMembers);
-}
-
-function displaySpotlights(members) {
-
-    members.forEach(member => {
-
+    selected.forEach(m => {
         const card = document.createElement("section");
-
-        card.classList.add("spotlight");
+        card.classList.add("spotlight-card");
 
         card.innerHTML = `
-            <h3>${member.name}</h3>
+            <h3>${m.name}</h3>
 
-            <img src="${member.image}"
-                alt="${member.name} logo">
+            <img src="${m.image}" alt="${m.name} logo" loading="lazy">
 
-            <p>${member.phone}</p>
+            <p>${m.address}</p>
+            <p>${m.phone}</p>
 
-            <p>${member.address}</p>
-
-            <p>
-                Membership:
-                ${member.membership}
-            </p>
-
-            <a href="${member.website}"
-                target="_blank">
+            <a href="${m.website}" target="_blank" rel="noopener noreferrer">
                 Visit Website
             </a>
+
+            <p><strong>${m.membership}</strong> Member</p>
         `;
 
-        spotlightContainer.appendChild(card);
+        container.appendChild(card);
     });
-
 }
 
-getSpotlights();
+loadMembers();

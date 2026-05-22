@@ -3,28 +3,23 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description"
-        content="Akwa Ibom Chamber of Commerce business directory featuring local companies, services, and entrepreneurs in Akwa Ibom State, Nigeria.">
+    <meta name="description" content="Akwa Ibom Chamber of Commerce Business Directory">
     <meta name="author" content="Itoro Akpan">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Business Directory | Akwa Ibom Chamber of Commerce</title>
-
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico">
+    <title>Business Directory | Akwa Ibom Chamber</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/chamber.css">
     <link rel="stylesheet" href="styles/chamber-large.css">
 
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- JS -->
-    <script src="scripts/chamber.js" defer></script>
     <script src="scripts/directory.js" defer></script>
 </head>
 
@@ -34,7 +29,7 @@
     <header>
 
         <div class="logo-container">
-            <img src="images/company1.jpg" alt="Akwa Ibom Chamber of Commerce Logo" width="80" height="80">
+            <img src="images/chamber.jpg" alt="Akwa Ibom Chamber Logo" width="80" height="80">
 
             <div>
                 <h1>Akwa Ibom Chamber</h1>
@@ -42,13 +37,9 @@
             </div>
         </div>
 
-        <button id="menu-button"
-            aria-label="Open Navigation Menu"
-            aria-expanded="false">
-            ☰
-        </button>
+        <button id="menu-button" aria-label="Menu" aria-expanded="false">☰</button>
 
-        <nav aria-label="Primary Navigation">
+        <nav>
             <ul class="navigation">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="directory.html" class="active">Directory</a></li>
@@ -62,25 +53,24 @@
     <!-- MAIN -->
     <main>
 
-        <!-- PAGE HEADER -->
         <section class="directory-header">
-            <h2>Business Directory</h2>
-            <p>Explore verified businesses across Akwa Ibom State.</p>
+            <h2>Member Business Directory</h2>
+            <p>Explore registered businesses in Akwa Ibom State</p>
         </section>
 
-        <!-- VIEW CONTROLS -->
-        <section class="view-controls" aria-label="Directory View Controls">
+        <!-- SEARCH + CONTROLS -->
+        <section class="view-controls">
 
-            <button id="grid-view" type="button">Grid View</button>
-            <button id="list-view" type="button">List View</button>
+            <button id="grid-view">Grid View</button>
+            <button id="list-view">List View</button>
+
+            <input type="text" id="search" placeholder="Search businesses...">
 
         </section>
 
         <!-- DIRECTORY CONTAINER -->
-        <section id="directory-container" class="directory-grid" aria-live="polite">
-
-            <!-- JavaScript loads members here -->
-
+        <section id="directory-container" class="directory-grid">
+            <!-- JS loads content here -->
         </section>
 
     </main>
@@ -90,42 +80,12 @@
 
         <div class="footer-info">
             <h3>Akwa Ibom Chamber of Commerce</h3>
-            <p>10 Business Avenue, Uyo, Akwa Ibom State, Nigeria</p>
+            <p>Uyo, Akwa Ibom State, Nigeria</p>
             <p>Email: info@akwaibomchamber.org</p>
-            <p>Phone: +234 800 000 0000</p>
-        </div>
-
-        <div class="social-links">
-
-            <a href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook">
-
-                <img src="images/facebook.webp" alt="Facebook icon" width="32" height="32">
-            </a>
-
-            <a href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Twitter">
-
-                <img src="images/twitter.webp" alt="Twitter icon" width="32" height="32">
-            </a>
-
-            <a href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn">
-
-                <img src="images/linkedin.webp" alt="LinkedIn icon" width="32" height="32">
-            </a>
-
         </div>
 
         <div class="footer-meta">
             <p>&copy; <span id="currentyear"></span> Akwa Ibom Chamber</p>
-            <p>Itoro Akpan | WDD 231</p>
             <p id="lastModified"></p>
         </div>
 
