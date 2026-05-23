@@ -1,41 +1,54 @@
-const container = document.querySelector("#spotlight-container");
-const url = "data/members.json";
+const spotlightContainer =
+    document.querySelector("#spotlights");
 
-async function loadMembers() {
-    const res = await fetch(url);
-    const members = await res.json();
+const urlMembers = "data/members.json";
 
-    const eligible = members.filter(m =>
-        m.membership === "Gold" || m.membership === "Silver"
+async function getMembers() {
+
+    const response = await fetch(urlMembers);
+
+    const data = await response.json();
+
+    displaySpotlights(data.members);
+}
+
+function displaySpotlights(members) {
+
+    const qualified = members.filter(member =>
+        member.membership === "Gold" ||
+        member.membership === "Silver"
     );
 
-    const shuffled = eligible.sort(() => Math.random() - 0.5);
+    const randomMembers =
+        qualified.sort(() => 0.5 - Math.random())
+        .slice(0, 3);
 
-    const selected = shuffled.slice(0, 3);
+    randomMembers.forEach(member => {
 
-    container.innerHTML = "";
-
-    selected.forEach(m => {
         const card = document.createElement("section");
-        card.classList.add("spotlight-card");
+
+        card.classList.add("spotlight");
 
         card.innerHTML = `
-            <h3>${m.name}</h3>
+            <h3>${member.name}</h3>
 
-            <img src="${m.image}" alt="${m.name} logo" loading="lazy">
+            <img src="${member.image}"
+                alt="${member.name} logo"
+                loading="lazy">
 
-            <p>${m.address}</p>
-            <p>${m.phone}</p>
+            <p>${member.address}</p>
 
-            <a href="${m.website}" target="_blank" rel="noopener noreferrer">
+            <p>${member.phone}</p>
+
+            <a href="${member.website}" target="_blank">
                 Visit Website
             </a>
 
-            <p><strong>${m.membership}</strong> Member</p>
+            <p>${member.membership} Member</p>
         `;
 
-        container.appendChild(card);
+        spotlightContainer.appendChild(card);
     });
 }
 
-loadMembers();
+getMembers();

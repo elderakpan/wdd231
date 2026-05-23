@@ -1,37 +1,43 @@
-/* ---------- LARGE VIEW ---------- */
 @media screen and (min-width: 768px) {
 
-    #menu-button {
+    #menu {
         display: none;
     }
 
     .navigation {
         display: flex;
         flex-direction: row;
-        justify-content: flex-end;
+        justify-content: center;
     }
 
-    .navigation li a {
+    .navigation a {
         border: none;
     }
 
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .hero-content {
+        max-width: 400px;
     }
 
     .home-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
-    .spotlight-grid {
+    .spotlight-card-section {
+        grid-column: span 3;
+    }
+
+    #spotlights {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    footer {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .list section {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr 2fr 1fr 1fr;
         align-items: center;
+        text-align: left;
     }
 }

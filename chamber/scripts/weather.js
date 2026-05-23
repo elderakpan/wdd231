@@ -1,37 +1,55 @@
-const API_KEY = "YOUR_API_KEY_HERE";
+const apiKey = "YOUR_API_KEY";
+
+const lat = 5.0377;
+const lon = 7.9128;
 
 const url =
-`https://api.openweathermap.org/data/2.5/forecast?lat=5.0377&lon=7.9237&appid=${API_KEY}&units=metric`;
-
-const tempEl = document.querySelector("#current-temp");
-const descEl = document.querySelector("#weather-desc");
-const listEl = document.querySelector("#forecast-list");
+`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
 async function getWeather() {
+
     try {
-        const res = await fetch(url);
-        const data = await res.json();
 
-        tempEl.textContent = `${Math.round(data.list[0].main.temp)}°C`;
-        descEl.textContent = data.list[0].weather[0].description;
+        const response = await fetch(url);
 
-        listEl.innerHTML = "";
+        if (!response.ok) {
+            throw Error(await response.text());
+        }
 
-        const days = [8, 16, 24];
+        const data = await response.json();
 
-        days.forEach(i => {
-            const li = document.createElement("li");
+        displayWeather(data);
 
-            li.textContent =
-                `${new Date(data.list[i].dt_txt).toLocaleDateString("en-US", {
-                    weekday: "long"
-                })}: ${Math.round(data.list[i].main.temp)}°C`;
+    } catch (error) {
+        console.error(error);
+    }
+}
 
-            listEl.appendChild(li);
-        });
+function displayWeather(data) {
 
-    } catch (err) {
-        console.error("Weather error:", err);
+    document.querySelector("#current-temp").innerHTML =
+        `${data.list[0].main.temp.toFixed(1)}°C`;
+
+    document.querySelector("#weather-desc").innerHTML =
+        data.list[0].weather[0].description;
+
+    const forecast = document.querySelector("#forecast");
+
+    forecast.innerHTML = "";
+
+    for (let i = 8; i < 32; i += 8) {
+
+        const li = document.createElement("li");
+
+        const date =
+            new Date(data.list[i].dt_txt);
+
+        li.innerHTML =
+            `${date.toLocaleDateString("en-US", {
+                weekday: "long"
+            })}: ${data.list[i].main.temp.toFixed(1)}°C`;
+
+        forecast.appendChild(li);
     }
 }
 
