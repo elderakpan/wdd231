@@ -1,28 +1,11 @@
 {
-    "members": [
-        {
-            "name": "Tech Solutions Ltd",
-            "address": "12 Wellington Street, Uyo",
-            "phone": "+2348001112222",
-            "website": "https://techsolutions.com",
-            "image": "images/company1.webp",
-            "membership": "Gold"
-        },
-        {
-            "name": "Ibom Foods",
-            "address": "45 Oron Road, Uyo",
-            "phone": "+2348003334444",
-            "website": "https://ibomfoods.com",
-            "image": "images/company2.webp",
-            "membership": "Silver"
-        },
-        {
-            "name": "Niger Delta Bank",
-            "address": "10 Aka Road, Uyo",
-            "phone": "+2348005556666",
-            "website": "https://ndbank.com",
-            "image": "images/company3.webp",
-            "membership": "Gold"
-        }
-    ]
+  "members": [
+    { "name": "Ibom Foods", "address": "Uyo", "phone": "08003334444", "website": "#", "image": "../chamber/images/m1.webp", "membership": "Silver" },
+    { "name": "Tech Solutions", "address": "Uyo", "phone": "08001112222", "website": "#", "image": "../chamber/images/m2.webp", "membership": "Gold" },
+    { "name": "Niger Delta Bank", "address": "Uyo", "phone": "08005556666", "website": "#", "image": "../chamber/images/m3.webp", "membership": "Gold" },
+    { "name": "Akwa Builders", "address": "Uyo", "phone": "08007771111", "website": "#", "image": "../chamber/images/m4.webp", "membership": "Silver" },
+    { "name": "Green Energy", "address": "Uyo", "phone": "08008882222", "website": "#", "image": "../chamber/images/m5.webp", "membership": "Gold" },
+    { "name": "Uyo Logistics", "address": "Uyo", "phone": "08009993333", "website": "#", "image": "../chamber/images/m6.webp", "membership": "Silver" },
+    { "name": "Digital Hub", "address": "Uyo", "phone": "08004446666", "website": "#", "image": "../chamber/images/m7.webp", "membership": "Gold" }
+  ]
 }

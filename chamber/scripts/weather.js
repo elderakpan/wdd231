@@ -1,56 +1,27 @@
 const apiKey = "YOUR_API_KEY";
-
-const lat = 5.0377;
-const lon = 7.9128;
-
-const url =
-`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+const url = `https://api.openweathermap.org/data/2.5/forecast?lat=5.0377&lon=7.9128&units=metric&appid=${apiKey}`;
 
 async function getWeather() {
+const res = await fetch(url);
+const data = await res.json();
 
-    try {
+document.querySelector("#temp").textContent =
+data.list[0].main.temp + "°C";
 
-        const response = await fetch(url);
+document.querySelector("#desc").textContent =
+data.list[0].weather[0].description;
 
-        if (!response.ok) {
-            throw Error(await response.text());
-        }
+const forecast = document.querySelector("#forecast");
+forecast.innerHTML = "";
 
-        const data = await response.json();
-
-        displayWeather(data);
-
-    } catch (error) {
-        console.error(error);
-    }
+for (let i = 8; i < 32; i += 8) {
+const li = document.createElement("li");
+li.textContent =
+new Date(data.list[i].dt_txt).toLocaleDateString("en-US", {
+weekday: "long"
+}) + ": " + data.list[i].main.temp + "°C";
+forecast.appendChild(li);
 }
-
-function displayWeather(data) {
-
-    document.querySelector("#current-temp").innerHTML =
-        `${data.list[0].main.temp.toFixed(1)}°C`;
-
-    document.querySelector("#weather-desc").innerHTML =
-        data.list[0].weather[0].description;
-
-    const forecast = document.querySelector("#forecast");
-
-    forecast.innerHTML = "";
-
-    for (let i = 8; i < 32; i += 8) {
-
-        const li = document.createElement("li");
-
-        const date =
-            new Date(data.list[i].dt_txt);
-
-        li.innerHTML =
-            `${date.toLocaleDateString("en-US", {
-                weekday: "long"
-            })}: ${data.list[i].main.temp.toFixed(1)}°C`;
-
-        forecast.appendChild(li);
-    }
 }
 
 getWeather();
