@@ -1,27 +1,141 @@
-const apiKey = "YOUR_API_KEY";
-const url = `https://api.openweathermap.org/data/2.5/forecast?lat=5.0377&lon=7.9128&units=metric&appid=${apiKey}`;
+const apiKey = 'YOUR_API_KEY';
 
-async function getWeather() {
-const res = await fetch(url);
-const data = await res.json();
+const apiKey = 'YOUR_API_KEY';
 
-document.querySelector("#temp").textContent =
-data.list[0].main.temp + "°C";
+/* UYO, AKWA IBOM */
+const city = 'Uyo';
+const countryCode = 'NG';
 
-document.querySelector("#desc").textContent =
-data.list[0].weather[0].description;
+const currentTemp =
+    document.querySelector('#current-temp');
 
-const forecast = document.querySelector("#forecast");
-forecast.innerHTML = "";
+const weatherDescription =
+    document.querySelector('#weather-desc');
 
-for (let i = 8; i < 32; i += 8) {
-const li = document.createElement("li");
-li.textContent =
-new Date(data.list[i].dt_txt).toLocaleDateString("en-US", {
-weekday: "long"
-}) + ": " + data.list[i].main.temp + "°C";
-forecast.appendChild(li);
+const forecastList =
+    document.querySelector('#forecast-list');
+
+/* CURRENT WEATHER URL */
+const weatherURL =
+    `https://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&units=metric&appid=${apiKey}`;
+
+/* FORECAST URL */
+const forecastURL =
+    `https://api.openweathermap.org/data/2.5/forecast?q=${city},${countryCode}&units=metric&appid=${apiKey}`;
+
+/* CURRENT WEATHER */
+async function getCurrentWeather() {
+
+    try {
+
+        const response =
+            await fetch(weatherURL);
+
+        if (!response.ok) {
+            throw new Error('Weather data not found');
+        }
+
+        const data =
+            await response.json();
+
+        displayCurrentWeather(data);
+
+    } catch (error) {
+
+        console.error(
+            'Weather Error:',
+            error
+        );
+
+        currentTemp.textContent =
+            'Unavailable';
+
+        weatherDescription.textContent =
+            'Unable to load weather data';
+    }
 }
+
+/* DISPLAY CURRENT WEATHER */
+function displayCurrentWeather(data) {
+
+    const temperature =
+        Math.round(data.main.temp);
+
+    const description =
+        data.weather[0].description;
+
+    currentTemp.textContent =
+        `${temperature}°C`;
+
+    weatherDescription.textContent =
+        `Uyo Weather: ${description}`;
 }
 
-getWeather();
+/* FORECAST */
+async function getForecast() {
+
+    try {
+
+        const response =
+            await fetch(forecastURL);
+
+        if (!response.ok) {
+            throw new Error('Forecast data not found');
+        }
+
+        const data =
+            await response.json();
+
+        displayForecast(data);
+
+    } catch (error) {
+
+        console.error(
+            'Forecast Error:',
+            error
+        );
+
+        forecastList.innerHTML =
+            '<li>Forecast unavailable</li>';
+    }
+}
+
+/* DISPLAY FORECAST */
+function displayForecast(data) {
+
+    forecastList.innerHTML = '';
+
+    const filteredForecast =
+        data.list.filter(item =>
+            item.dt_txt.includes('12:00:00')
+        );
+
+    filteredForecast
+        .slice(0, 3)
+        .forEach(day => {
+
+            const listItem =
+                document.createElement('li');
+
+            const forecastDate =
+                new Date(day.dt_txt);
+
+            const formattedDate =
+                forecastDate.toLocaleDateString(
+                    'en-US',
+                    { weekday: 'long' }
+                );
+
+            const temperature =
+                Math.round(day.main.temp);
+
+            listItem.textContent =
+                `${formattedDate}: ${temperature}°C`;
+
+            forecastList.appendChild(listItem);
+        });
+}
+
+/* RUN FUNCTIONS */
+getCurrentWeather();
+getForecast();

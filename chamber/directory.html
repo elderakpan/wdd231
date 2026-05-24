@@ -2,61 +2,82 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Akwa Ibom Chamber Directory | WDD231</title>
+    <title>Chamber Directory</title>
 
-<meta name="description"
-content="Browse Akwa Ibom Chamber of Commerce member directory including businesses, contact details, and membership levels.">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/chamber.css">
+    <link rel="stylesheet" href="styles/chamber-large.css">
 
-<meta name="author" content="Itoro Etim Akpan">
-
-<meta property="og:title" content="Akwa Ibom Chamber Directory">
-<meta property="og:description" content="Official business directory of Akwa Ibom Chamber of Commerce members.">
-<meta property="og:image" content="https://elderakpan.github.io/wdd231/chamber/images/hero.webp">
-<meta property="og:url" content="https://elderakpan.github.io/wdd231/chamber/directory.html">
-
-<link rel="icon" href="images/favicon.ico">
-
-<link rel="stylesheet" href="styles/small.css">
-<link rel="stylesheet" href="styles/larger.css">
-
-<script src="scripts/navigation.js" defer></script>
-<script src="scripts/date.js" defer></script>
-<script src="scripts/directory.js" defer></script>
+    <script src="scripts/directory.js" defer></script>
 </head>
 
 <body>
 
 <header>
-<h1>Directory</h1>
 
-<button id="menu"></button>
+    <div class="logo-container">
 
-<nav class="navigation">
-<a href="index.html">Home</a>
-<a href="directory.html" class="active">Directory</a>
-<a href="join.html">Join</a>
-<a href="discover.html">Discover</a>
-</nav>
+        <img src="images/chamber.jpg"
+            alt="Akwa Ibom Chamber Logo"
+            width="80"
+            height="80">
+
+        <div>
+            <p class="site-name">Akwa Ibom Chamber</p>
+            <p>Commerce & Business Growth</p>
+        </div>
+
+    </div>
+
+    <nav>
+
+        <ul class="navigation">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="directory.html" class="active">Directory</a></li>
+
+            <li><a href="join.html">Join</a></li>
+
+            <li><a href="discover.html">Discover</a></li>
+
+        </ul>
+
+    </nav>
+
 </header>
 
 <main>
 
-<section class="controls">
-<button id="grid">Grid</button>
-<button id="list">List</button>
-</section>
+    <h1>Chamber Member Directory</h1>
 
-<section id="cards"></section>
+    <div class="directory-menu">
+
+        <button id="gridBtn">Grid View</button>
+
+        <button id="listBtn">List View</button>
+
+    </div>
+
+    <section id="members" class="grid-view"></section>
 
 </main>
 
 <footer>
-<p>&copy; <span id="year"></span> Akwa Ibom Chamber</p>
-<p id="modified"></p>
+
+    <p>
+        &copy;
+        <span id="currentyear"></span>
+        Akwa Ibom Chamber
+    </p>
+
+    <p id="lastModified"></p>
+
 </footer>
 
 </body>
+
 </html>

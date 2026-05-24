@@ -1,0 +1,30 @@
+@media screen and (min-width: 768px) {
+
+    #menu-button {
+        display: none;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .home-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .spotlight-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #directory-container.grid-view {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

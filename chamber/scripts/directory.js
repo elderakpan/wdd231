@@ -1,13 +1,6 @@
-const membersContainer =
-    document.querySelector("#members");
+const url = 'data/members.json';
 
-const gridButton =
-    document.querySelector("#grid");
-
-const listButton =
-    document.querySelector("#list");
-
-const url = "data/members.json";
+const membersContainer = document.querySelector('#members');
 
 async function getMembers() {
 
@@ -15,43 +8,64 @@ async function getMembers() {
 
     const data = await response.json();
 
-    displayMembers(data.members);
+    displayMembers(data);
 }
 
 function displayMembers(members) {
 
     members.forEach(member => {
 
-        const card = document.createElement("section");
+        const card = document.createElement('article');
+
+        card.classList.add('member-card');
 
         card.innerHTML = `
-            <img src="${member.image}"
-                alt="${member.name} logo"
-                loading="lazy">
+            <img src="${member.image}" 
+                 alt="${member.name} logo"
+                 loading="lazy">
 
-            <h3>${member.name}</h3>
+            <h2>${member.name}</h2>
 
             <p>${member.address}</p>
 
             <p>${member.phone}</p>
 
             <a href="${member.website}" target="_blank">
-                Website
+                Visit Website
             </a>
+
+            <p>
+                <strong>Membership Level:</strong>
+                ${member.membership}
+            </p>
         `;
 
         membersContainer.appendChild(card);
     });
 }
 
-gridButton.addEventListener("click", () => {
-    membersContainer.classList.add("grid");
-    membersContainer.classList.remove("list");
-});
-
-listButton.addEventListener("click", () => {
-    membersContainer.classList.add("list");
-    membersContainer.classList.remove("grid");
-});
-
 getMembers();
+
+const gridBtn = document.querySelector('#gridBtn');
+
+const listBtn = document.querySelector('#listBtn');
+
+gridBtn.addEventListener('click', () => {
+
+    membersContainer.classList.add('grid-view');
+
+    membersContainer.classList.remove('list-view');
+});
+
+listBtn.addEventListener('click', () => {
+
+    membersContainer.classList.add('list-view');
+
+    membersContainer.classList.remove('grid-view');
+});
+
+document.querySelector('#currentyear').textContent =
+    new Date().getFullYear();
+
+document.querySelector('#lastModified').textContent =
+    `Last Modification: ${document.lastModified}`;

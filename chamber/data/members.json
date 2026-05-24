@@ -1,11 +1,58 @@
-{
-  "members": [
-    { "name": "Ibom Foods", "address": "Uyo", "phone": "08003334444", "website": "#", "image": "../chamber/images/m1.webp", "membership": "Silver" },
-    { "name": "Tech Solutions", "address": "Uyo", "phone": "08001112222", "website": "#", "image": "../chamber/images/m2.webp", "membership": "Gold" },
-    { "name": "Niger Delta Bank", "address": "Uyo", "phone": "08005556666", "website": "#", "image": "../chamber/images/m3.webp", "membership": "Gold" },
-    { "name": "Akwa Builders", "address": "Uyo", "phone": "08007771111", "website": "#", "image": "../chamber/images/m4.webp", "membership": "Silver" },
-    { "name": "Green Energy", "address": "Uyo", "phone": "08008882222", "website": "#", "image": "../chamber/images/m5.webp", "membership": "Gold" },
-    { "name": "Uyo Logistics", "address": "Uyo", "phone": "08009993333", "website": "#", "image": "../chamber/images/m6.webp", "membership": "Silver" },
-    { "name": "Digital Hub", "address": "Uyo", "phone": "08004446666", "website": "#", "image": "../chamber/images/m7.webp", "membership": "Gold" }
-  ]
-}
+[
+  {
+    "name": "Uyo Tech Solutions",
+    "address": "12 Wellington Bassey Way, Uyo",
+    "phone": "+234 801 111 1111",
+    "website": "https://example.com",
+    "image": "images/uyo-tech-logo.webp",
+    "membership": "Gold"
+  },
+  {
+    "name": "Ibom Foods Ltd",
+    "address": "45 Oron Road, Uyo",
+    "phone": "+234 802 222 2222",
+    "website": "https://example.com",
+    "image": "images/ibom-foods-logo.webp",
+    "membership": "Silver"
+  },
+  {
+    "name": "Ndon Electronics",
+    "address": "22 Aka Road, Uyo",
+    "phone": "+234 803 333 3333",
+    "website": "https://example.com",
+    "image": "images/ndon-electronics-logo.webp",
+    "membership": "Bronze"
+  },
+  {
+    "name": "Akwa Print Hub",
+    "address": "8 Ikot Ekpene Road, Uyo",
+    "phone": "+234 804 444 4444",
+    "website": "https://example.com",
+    "image": "images/akwa-print-logo.webp",
+    "membership": "Gold"
+  },
+  {
+    "name": "Ibom Fashion House",
+    "address": "14 Abak Road, Uyo",
+    "phone": "+234 805 555 5555",
+    "website": "https://example.com",
+    "image": "images/ibom-fashion-logo.webp",
+    "membership": "Silver"
+  },
+  {
+    "name": "Digital Edge Media",
+    "address": "31 Nwaniba Road, Uyo",
+    "phone": "+234 806 666 6666",
+    "website": "https://example.com",
+    "image": "images/digital-edge-logo.webp",
+    "membership": "Gold"
+  },
+  {
+    "name": "Ibom Logistics",
+    "address": "20 Brooks Street, Uyo",
+    "phone": "+234 807 777 7777",
+    "website": "https://example.com",
+    "image": "images/ibom-logistics.webp",
+    "membership": "Bronze"
+  }
+]

@@ -1,19 +1,15 @@
-const menuButton =
-    document.querySelector("#menu");
+const menuButton = document.querySelector('#menu-button');
+const navigation = document.querySelector('.navigation');
 
-const navigation =
-    document.querySelector(".navigation");
+menuButton.addEventListener('click', () => {
 
-menuButton.addEventListener("click", () => {
+    navigation.classList.toggle('open');
 
-    navigation.classList.toggle("open");
+    const isOpen =
+        navigation.classList.contains('open');
 
-    menuButton.classList.toggle("open");
-
+    menuButton.setAttribute(
+        'aria-expanded',
+        isOpen
+    );
 });
-
-document.querySelector("#year").textContent =
-    new Date().getFullYear();
-
-document.querySelector("#lastModified").textContent =
-    `Last Modified: ${document.lastModified}`;

@@ -1,5 +1,11 @@
-document.querySelector("#year").textContent =
+const currentYear =
+    document.querySelector('#currentyear');
+
+const lastModified =
+    document.querySelector('#lastModified');
+
+currentYear.textContent =
     new Date().getFullYear();
 
-document.querySelector("#lastModified").textContent =
+lastModified.textContent =
     `Last Modified: ${document.lastModified}`;

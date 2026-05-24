@@ -1,144 +1,92 @@
-// ==============================
-// MOBILE MENU (SMOOTH TOGGLE)
-// ==============================
-const menuButton = document.querySelector("#menu-button");
-const nav = document.querySelector(".navigation");
+const menuButton = document.querySelector('#menu-button');
+const navigation = document.querySelector('.navigation');
 
-menuButton?.addEventListener("click", () => {
-    nav.classList.toggle("open");
+menuButton.addEventListener('click', () => {
 
-    const expanded = menuButton.getAttribute("aria-expanded") === "true";
-    menuButton.setAttribute("aria-expanded", !expanded);
+    navigation.classList.toggle('open');
+
+    const isOpen = navigation.classList.contains('open');
+
+    menuButton.setAttribute('aria-expanded', isOpen);
 });
 
-
-// ==============================
-// FOOTER DATES
-// ==============================
-document.querySelector("#currentyear").textContent =
+/* FOOTER */
+document.querySelector('#currentyear').textContent =
     new Date().getFullYear();
 
-document.querySelector("#lastModified").textContent =
+document.querySelector('#lastModified').textContent =
     `Last Modified: ${document.lastModified}`;
 
+/* WEATHER */
+const apiKey = 'YOUR_API_KEY';
+const lat = '5.0333';
+const lon = '7.9333';
 
-// ==============================
-// DARK MODE TOGGLE (NEW)
-// ==============================
-const darkToggle = document.createElement("button");
-darkToggle.textContent = "🌙 Dark Mode";
-darkToggle.style.marginLeft = "1rem";
-darkToggle.style.padding = "0.5rem";
+const weatherURL =
+    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
-document.querySelector("header")?.appendChild(darkToggle);
-
-darkToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-});
-
-
-// ==============================
-// WEATHER (IMPROVED)
-// ==============================
-const API_KEY = "YOUR_API_KEY_HERE";
-
-const lat = 5.0377;
-const lon = 7.9128;
-
-const tempEl = document.querySelector("#current-temp");
-const descEl = document.querySelector("#weather-desc");
-const forecastEl = document.querySelector("#forecast-list");
+const forecastURL =
+    `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
 async function getWeather() {
+
     try {
-        const res = await fetch(
-            `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
-        );
 
-        const data = await res.json();
+        const response = await fetch(weatherURL);
 
-        tempEl.textContent = `${Math.round(data.main.temp)}°C`;
-        descEl.textContent = data.weather[0].description;
+        const data = await response.json();
 
-        getForecast();
+        document.querySelector('#current-temp').textContent =
+            `${Math.round(data.main.temp)}°C`;
 
-    } catch (err) {
-        descEl.textContent = "Weather unavailable";
+        document.querySelector('#weather-desc').textContent =
+            data.weather[0].description;
+
+    } catch (error) {
+
+        console.error('Weather Error:', error);
     }
 }
 
 async function getForecast() {
+
     try {
-        const res = await fetch(
-            `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
-        );
 
-        const data = await res.json();
+        const response = await fetch(forecastURL);
 
-        forecastEl.innerHTML = "";
+        const data = await response.json();
 
-        const daily = data.list.filter(item =>
-            item.dt_txt.includes("12:00:00")
-        ).slice(0, 3);
+        const forecastList =
+            document.querySelector('#forecast-list');
 
-        daily.forEach(day => {
-            const li = document.createElement("li");
+        forecastList.innerHTML = '';
 
-            const date = new Date(day.dt_txt);
+        const filtered =
+            data.list.filter(item =>
+                item.dt_txt.includes('12:00:00')
+            );
 
-            li.innerHTML = `
-                <strong>${date.toDateString().slice(0, 3)}</strong>
-                — ${Math.round(day.main.temp)}°C
-                — ${day.weather[0].main}
-            `;
+        filtered.slice(0, 3).forEach(day => {
 
-            forecastEl.appendChild(li);
+            const li = document.createElement('li');
+
+            const date =
+                new Date(day.dt_txt).toLocaleDateString(
+                    'en-US',
+                    { weekday: 'long' }
+                );
+
+            li.textContent =
+                `${date}: ${Math.round(day.main.temp)}°C`;
+
+            forecastList.appendChild(li);
         });
 
-    } catch {
-        forecastEl.innerHTML = "<li>Forecast unavailable</li>";
+    } catch (error) {
+
+        console.error('Forecast Error:', error);
     }
 }
 
-
-// ==============================
-// SPOTLIGHTS (UPGRADED JSON STYLE)
-// ==============================
-const spotlightContainer = document.querySelector("#spotlight-container");
-
-const members = [
-    { name: "Akwa Tech Solutions", level: "Gold", desc: "IT & software solutions provider." },
-    { name: "Uyo Agro Alliance", level: "Silver", desc: "Agricultural innovation group." },
-    { name: "Ibom Traders Network", level: "Gold", desc: "Trade and commerce network." },
-    { name: "Green Energy Hub", level: "Silver", desc: "Renewable energy solutions." }
-];
-
-function loadSpotlights() {
-    if (!spotlightContainer) return;
-
-    const filtered = members.filter(m =>
-        m.level === "Gold" || m.level === "Silver"
-    );
-
-    const selected = filtered
-        .sort(() => 0.5 - Math.random())
-        .slice(0, 2);
-
-    spotlightContainer.innerHTML = "";
-
-    selected.forEach(m => {
-        const card = document.createElement("div");
-        card.className = "spotlight-card";
-
-        card.innerHTML = `
-            <h3>${m.name}</h3>
-            <p><strong>${m.level}</strong> Member</p>
-            <p>${m.desc}</p>
-        `;
-
-        spotlightContainer.appendChild(card);
-    });
-}
-
 getWeather();
-loadSpotlights();
+getForecast();

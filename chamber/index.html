@@ -2,101 +2,393 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Akwa Ibom Chamber Of Commerce Home | Business Directory & Events | WDD231</title>
+    <!-- META -->
+    <meta charset="UTF-8">
 
-<meta name="description"
-content="Akwa Ibom Chamber of Commerce connects businesses, entrepreneurs, and investors across the state through networking, events, and a dynamic business directory.">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<meta name="author" content="Itoro Etim Akpan">
+    <meta name="description"
+        content="Akwa Ibom Chamber of Commerce promotes businesses, networking, local events, and economic development opportunities in Akwa Ibom State, Nigeria.">
 
-<meta property="og:title" content="Akwa Ibom Chamber Of Commerce Home">
-<meta property="og:description" content="Explore business opportunities, members directory, and events in Akwa Ibom Chamber of Commerce.">
-<meta property="og:image" content="https://elderakpan.github.io/wdd231/chamber/images/hero.webp">
-<meta property="og:url" content="https://elderakpan.github.io/wdd231/chamber/index.html">
+    <meta name="author"
+        content="Itoro Etim Akpan">
 
-<link rel="icon" href="images/favicon.ico">
+    <!-- TITLE -->
+    <title>Akwa Ibom Chamber of Commerce | Home</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FAVICON -->
+    <link rel="icon"
+    type="image/png"
+    href="images/favicon.png">
+    <!-- OPEN GRAPH -->
+    <meta property="og:title"
+        content="Akwa Ibom Chamber of Commerce">
 
-<link rel="stylesheet" href="styles/small.css">
-<link rel="stylesheet" href="styles/larger.css">
+    <meta property="og:description"
+        content="Explore chamber events, business opportunities, networking, and economic growth in Akwa Ibom State.">
 
-<script src="scripts/navigation.js" defer></script>
-<script src="scripts/date.js" defer></script>
-<script src="scripts/weather.js" defer></script>
-<script src="scripts/spotlight.js" defer></script>
+    <meta property="og:image"
+        content="https://itoroetim.github.io/wdd231/chamber/images/company4.webp">
+
+    <meta property="og:url"
+        content="https://itoroetim.github.io/wdd231/chamber/index.html">
+
+    <meta property="og:type"
+        content="website">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+        href="styles/normalize.css">
+
+    <link rel="stylesheet"
+        href="styles/chamber.css">
+
+    <link rel="stylesheet"
+        href="styles/chamber-large.css">
+
+    <!-- JAVASCRIPT -->
+    <script src="scripts/chamber.js"
+        defer></script>
+
 </head>
 
 <body>
 
-<header>
-<div class="logo">
-<img src="images/logo.webp" alt="Akwa Ibom Chamber Logo">
-<div>
-<h1>Akwa Ibom Chamber</h1>
-<p>Supporting Local Businesses</p>
-</div>
-</div>
+    <!-- SKIP LINK -->
+    <a href="#main-content"
+        class="skip-link">
+        Skip to Main Content
+    </a>
 
-<button id="menu"></button>
+    <!-- HEADER -->
+    <header>
 
-<nav class="navigation">
-<a href="index.html" class="active">Home</a>
-<a href="directory.html">Directory</a>
-<a href="join.html">Join</a>
-<a href="discover.html">Discover</a>
-</nav>
-</header>
+        <div class="logo-container">
 
-<main>
+            <img src="images/chamber.jpg"
+                alt="Akwa Ibom Chamber Logo"
+                width="80"
+                height="80">
 
-<h1 class="sr-only">Akwa Ibom Chamber Home Page</h1>
+            <div>
 
-<section class="hero">
-<picture>
-<source srcset="images/hero-large.webp" media="(min-width: 768px)">
-<img src="images/hero.webp" alt="Akwa Ibom Business Community">
-</picture>
+                <p class="site-name">
+                    Akwa Ibom Chamber
+                </p>
 
-<div class="hero-text">
-<h2>Grow Your Business With Us</h2>
-<a class="cta" href="join.html">Join Chamber</a>
-</div>
-</section>
+                <p>
+                    Commerce &amp; Business Growth
+                </p>
 
-<div class="grid-home">
+            </div>
 
-<section class="card">
-<h2>Current Events</h2>
-<p>Business Summit 2026</p>
-<p>Digital Skills Workshop</p>
-</section>
+        </div>
 
-<section class="card">
-<h2>Weather</h2>
-<p>Temperature: <span id="temp"></span></p>
-<p id="desc"></p>
-<ul id="forecast"></ul>
-</section>
+        <!-- MENU BUTTON -->
+        <button id="menu-button"
+            aria-label="Open Navigation Menu"
+            aria-expanded="false"
+            aria-controls="primary-nav">
 
-<section class="card">
-<h2>Company Spotlights</h2>
-<div id="spotlights"></div>
-</section>
+            ☰
 
-</div>
+        </button>
 
-</main>
+        <!-- NAVIGATION -->
+        <nav id="primary-nav"
+            aria-label="Primary Navigation">
 
-<footer>
-<p>&copy; <span id="year"></span> Akwa Ibom Chamber</p>
-<p id="modified"></p>
-</footer>
+            <ul class="navigation">
+
+                <li>
+                    <a href="index.html"
+                        class="active">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="directory.html">
+                        Directory
+                    </a>
+                </li>
+
+                <li>
+                    <a href="join.html">
+                        Join
+                    </a>
+                </li>
+
+                <li>
+                    <a href="discover.html">
+                        Discover
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- MAIN -->
+    <main id="main-content">
+
+        <!-- PAGE TITLE -->
+        <h1>
+            Akwa Ibom Chamber of Commerce
+        </h1>
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <picture>
+
+                <source media="(min-width: 1000px)"
+                    srcset="images/hero-large.webp">
+
+                <source media="(min-width: 600px)"
+                    srcset="images/hero-medium.webp ">
+
+                <img src="images/company4.webp"
+                    alt="Akwa Ibom business district skyline"
+                    width="1200"
+                    height="600"
+                    loading="eager">
+
+            </picture>
+
+            <div class="hero-text">
+
+                <h2>
+                    Supporting Businesses in Akwa Ibom State
+                </h2>
+
+                <p>
+                    Empowering entrepreneurs and strengthening
+                    our local economy.
+                </p>
+
+                <a href="join.html"
+                    class="cta-button">
+
+                    Join the Chamber
+
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- HOME GRID -->
+        <div class="home-grid">
+
+            <!-- EVENTS -->
+            <section class="card events">
+
+                <h2>
+                    Current Events
+                </h2>
+
+                <article>
+
+                    <h3>
+                        Business Expo 2026
+                    </h3>
+
+                    <p>
+                        Meet investors, entrepreneurs,
+                        and innovators in Uyo this June.
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <h3>
+                        Digital Skills Workshop
+                    </h3>
+
+                    <p>
+                        Learn modern business and
+                        marketing skills for growth.
+                    </p>
+
+                </article>
+
+            </section>
+
+            <!-- WEATHER -->
+            <section class="card weather">
+
+                <h2>
+                    Weather
+                </h2>
+
+                <p>
+
+                    <strong>
+                        Temperature:
+                    </strong>
+
+                    <span id="current-temp">
+                        Loading...
+                    </span>
+
+                </p>
+
+                <p id="weather-desc"
+                    aria-live="polite">
+
+                    Loading weather...
+
+                </p>
+
+                <h3>
+                    3-Day Forecast
+                </h3>
+
+                <ul id="forecast-list">
+
+                    <li>
+                        Loading forecast...
+                    </li>
+
+                </ul>
+
+            </section>
+
+        </div>
+
+        <!-- SPOTLIGHTS -->
+        <section class="spotlights">
+
+            <h2>
+                Member Spotlights
+            </h2>
+
+            <div id="spotlight-container"
+                class="spotlight-grid">
+
+                <!-- JS CONTENT -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-info">
+
+            <h2>
+                Akwa Ibom Chamber of Commerce
+            </h2>
+
+            <address>
+
+                10 Business Avenue,<br>
+                Uyo, Akwa Ibom State, Nigeria
+
+            </address>
+
+            <p>
+
+                Email:
+                <a href="mailto:info@akwaibomchamber.org">
+                    info@akwaibomchamber.org
+                </a>
+
+            </p>
+
+            <p>
+
+                Phone:
+                <a href="tel:+2348000000000">
+                    +234 800 000 0000
+                </a>
+
+            </p>
+
+        </div>
+
+        <!-- SOCIAL LINKS -->
+        <div class="social-links">
+
+            <a href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook">
+
+                <img src="images/facebook.jpg"
+                    alt="Facebook icon"
+                    width="32"
+                    height="32">
+ 
+            </a>
+
+            <a href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter">
+
+                <img src="images/twitter.png"
+                    alt="Twitter icon"
+                    width="32"
+                    height="32">
+
+            </a>
+
+            <a href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn">
+
+                <img src="images/linkedin.png"
+                    alt="LinkedIn icon"
+                    width="32"
+                    height="32">
+
+            </a>
+
+        </div>
+
+        <!-- FOOTER META -->
+        <div class="footer-meta">
+
+            <p>
+
+                &copy;
+                <span id="currentyear"></span>
+                Akwa Ibom Chamber
+
+            </p>
+
+            <p>
+                Itoro Etim Akpan | WDD 231
+            </p>
+
+            <p id="lastModified"></p>
+
+        </div>
+
+    </footer>
 
 </body>
+
 </html>
