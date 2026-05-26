@@ -111,7 +111,8 @@ h1 {
 
 .hero img {
     width: 100%;
-    height: auto;
+    max-height: 500px;
+    object-fit: cover;
     display: block;
 }
 
@@ -123,18 +124,36 @@ h1 {
     color: var(--light-color);
     padding: 1rem;
     border-radius: 10px;
+
+.join-btn 
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    color: #ffd60a;
+    border: 2px solid #ffd60a;
+
+    padding: 0.9rem 1.8rem;
+    border-radius: 10px;
+
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.cta-button {
-    display: inline-block;
-    margin-top: 1rem;
-    background-color: var(--accent-color);
-    color: var(--dark-color);
-    padding: 0.75rem 1.25rem;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
+.join-btn:hover {
+    background: rgba(255, 214, 10, 0.2);
+    color: #ffffff;
+    border-color: #ffffff;
+
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(255, 214, 10, 0.4);
 }
+
 
 /* HOME GRID */
 .home-grid {

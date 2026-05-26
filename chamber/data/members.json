@@ -4,7 +4,7 @@
     "address": "12 Wellington Bassey Way, Uyo",
     "phone": "+234 801 111 1111",
     "website": "https://example.com",
-    "image": "images/uyo-tech-logo.webp",
+    "image": "images/technology.jpg",
     "membership": "Gold"
   },
   {
@@ -12,7 +12,7 @@
     "address": "45 Oron Road, Uyo",
     "phone": "+234 802 222 2222",
     "website": "https://example.com",
-    "image": "images/ibom-foods-logo.webp",
+    "image": "images/food.jpg",
     "membership": "Silver"
   },
   {
@@ -20,7 +20,7 @@
     "address": "22 Aka Road, Uyo",
     "phone": "+234 803 333 3333",
     "website": "https://example.com",
-    "image": "images/ndon-electronics-logo.webp",
+    "image": "images/electronics.jpg",
     "membership": "Bronze"
   },
   {
@@ -28,7 +28,7 @@
     "address": "8 Ikot Ekpene Road, Uyo",
     "phone": "+234 804 444 4444",
     "website": "https://example.com",
-    "image": "images/akwa-print-logo.webp",
+    "image": "images/clothes-print.jpg",
     "membership": "Gold"
   },
   {
@@ -36,7 +36,7 @@
     "address": "14 Abak Road, Uyo",
     "phone": "+234 805 555 5555",
     "website": "https://example.com",
-    "image": "images/ibom-fashion-logo.webp",
+    "image": "images/fashion.jpg",
     "membership": "Silver"
   },
   {
@@ -44,7 +44,7 @@
     "address": "31 Nwaniba Road, Uyo",
     "phone": "+234 806 666 6666",
     "website": "https://example.com",
-    "image": "images/digital-edge-logo.webp",
+    "image": "images/digital.png",
     "membership": "Gold"
   },
   {
@@ -52,7 +52,7 @@
     "address": "20 Brooks Street, Uyo",
     "phone": "+234 807 777 7777",
     "website": "https://example.com",
-    "image": "images/ibom-logistics.webp",
+    "image": "images/logistics.jpg",
     "membership": "Bronze"
   }
 ]
