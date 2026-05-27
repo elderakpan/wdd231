@@ -34,6 +34,41 @@
         grid-template-columns: 1fr 1fr;
     }
 
+      /* DESKTOP HEADER */
+    .home-header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* HORIZONTAL NAVIGATION */
+    .home-header .navigation {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        width: auto;
+    }
+
+    /* HIDE MENU BUTTON */
+    #menu-button {
+        display: none;
+    }
+
+    .home-header nav {
+        margin-left: auto;
+    }
+
+    .home-header .navigation a {
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+    }
+
+    .home-header .navigation a:hover {
+        background: #0b5ed7;
+        color: white;
+    }
+}
+
     /* SPOTLIGHTS */
 
     .spotlight-grid {
