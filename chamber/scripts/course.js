@@ -1,3 +1,5 @@
+
+// Course required file placeholder
 const courses = [
     { code: "WDD 130", name: "Web Fundamentals", credits: 2, completed: true },
     { code: "WDD 131", name: "Dynamic Web Fundamentals", credits: 2, completed: true },
