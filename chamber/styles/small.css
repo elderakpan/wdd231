@@ -374,6 +374,133 @@ main h1 {
     color: var(--primary-color);
 }
 
+/* JOIN PAGE */
+
+.join-page h1,
+.thankyou-page h1 {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.join-container {
+    display: grid;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+/* FORM */
+
+.join-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.join-form label {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    font-weight: 600;
+}
+
+.join-form input,
+.join-form textarea,
+.join-form select {
+    padding: .8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.join-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* MEMBERSHIP CARDS */
+
+.membership-cards {
+    display: grid;
+    gap: 1rem;
+}
+
+.card {
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+
+    animation: fadeIn 1s ease-in-out;
+}
+
+.card h2 {
+    margin-bottom: .5rem;
+}
+
+.card button {
+    margin-top: 1rem;
+    padding: .7rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* MODALS */
+
+dialog {
+    border: none;
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 350px;
+}
+
+dialog button {
+    margin-top: 1rem;
+    padding: .7rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+::backdrop {
+    background: rgba(0,0,0,.5);
+}
+
+/* THANK YOU PAGE */
+
+.results-card {
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    max-width: 600px;
+}
+
+.results-card p {
+    margin-bottom: 1rem;
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* =========================
    FOOTER
 ========================= */

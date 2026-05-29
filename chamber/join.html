@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#0b5ed7">
+
+    <title>Join | Akwa Ibom Chamber of Commerce</title>
+
+    <meta name="description"
+        content="Join the Akwa Ibom Chamber of Commerce and grow your business network.">
+
+    <meta name="author" content="Itoro Etim Akpan">
+
+    <link rel="icon" href="images/favicon.ico">
+
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/join.js" defer></script>
+
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header>
+
+    <img src="images/chamber.jpg"
+        alt="Akwa Ibom Chamber of Commerce logo"
+        width="80"
+        height="80">
+
+    <div>
+        <h1>Akwa Ibom Chamber of Commerce</h1>
+        <p>Commerce & Business Growth</p>
+    </div>
+
+    <button id="menu-button"
+        aria-label="Open navigation menu"
+        aria-expanded="false">
+        ☰
+    </button>
+
+    <nav>
+        <ul class="navigation">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+            <li><a href="discover.html">Discover</a></li>
+            <li><a href="thankyou.html">Thank You</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<main id="main-content">
+
+    <h1>Join the Chamber</h1>
+
+    <div class="join-container">
+
+        <form method="get" action="thankyou.html" class="join-form">
+
+            <label>
+                First Name
+                <input type="text" name="firstname" autocomplete="given-name" required>
+            </label>
+
+            <label>
+                Last Name
+                <input type="text" name="lastname" autocomplete="family-name" required>
+            </label>
+
+            <label>
+                Organizational Title
+                <input type="text" name="organizationtitle"
+                    pattern="[A-Za-z -]{7,}"
+                    autocomplete="organization-title">
+            </label>
+
+            <label>
+                Email Address
+                <input type="email" name="email"
+                    placeholder="example@email.com"
+                    autocomplete="email"
+                    required>
+            </label>
+
+            <label>
+                Mobile Phone Number
+                <input type="tel" name="phone"
+                    autocomplete="tel"
+                    required>
+            </label>
+
+            <label>
+                Business/Organization Name
+                <input type="text" name="business"
+                    autocomplete="organization"
+                    required>
+            </label>
+
+            <label>
+                Membership Level
+                <select name="membership" required>
+                    <option value="" disabled selected>Select Membership</option>
+                    <option value="np">NP Membership</option>
+                    <option value="bronze">Bronze Membership</option>
+                    <option value="silver">Silver Membership</option>
+                    <option value="gold">Gold Membership</option>
+                </select>
+            </label>
+
+            <label>
+                Business Description
+                <textarea name="description" rows="5"></textarea>
+            </label>
+
+            <input type="hidden" name="timestamp" id="timestamp">
+
+            <input type="submit" value="Submit Application">
+
+        </form>
+
+    </div>
+
+</main>
+
+<footer>
+
+    <section>
+
+        <h3>Akwa Ibom Chamber of Commerce</h3>
+
+        <p>
+            10 Business Avenue,<br>
+            Uyo, Akwa Ibom State, Nigeria
+        </p>
+
+        <p>
+            Email:
+            <a href="mailto:info@akwaibomchamber.org">
+                info@akwaibomchamber.org
+            </a>
+        </p>
+
+        <p>
+            Phone:
+            <a href="tel:+2348000000000">
+                +234 800 000 0000
+            </a>
+        </p>
+
+    </section>
+
+    <section class="socials">
+
+        <a href="https://facebook.com" target="_blank">
+            <img src="images/facebook.jpg" width="32" height="32" alt="Facebook">
+        </a>
+
+        <a href="https://twitter.com" target="_blank">
+            <img src="images/twitter.png" width="32" height="32" alt="Twitter">
+        </a>
+
+        <a href="https://linkedin.com" target="_blank">
+            <img src="images/linkedin.png" width="32" height="32" alt="LinkedIn">
+        </a>
+
+    </section>
+
+    <section>
+
+        <p>© 2026 Akwa Ibom Chamber</p>
+        <p>Itoro Etim Akpan | WDD 231</p>
+        <p id="lastModified"></p>
+
+    </section>
+
+</footer>
+
+<script>
+document.querySelector("#timestamp").value = new Date().toLocaleString();
+document.querySelector("#lastModified").textContent =
+    "Last Modified: " + document.lastModified;
+</script>
+
+</body>
+</html>
+
+

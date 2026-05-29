@@ -93,6 +93,37 @@
         margin: 0;
     }
 
+    @media screen and (min-width: 768px) {
+
+    .join-container {
+        grid-template-columns: 2fr 1fr;
+        align-items: start;
+    }
+
+    .membership-cards {
+        position: sticky;
+        top: 1rem;
+    }
+
+    .join-form {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 12px;
+    }
+
+    .card {
+        transition: transform .3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .results-card {
+        font-size: 1.1rem;
+    }
+}
+
     /* FOOTER */
 
     footer {
