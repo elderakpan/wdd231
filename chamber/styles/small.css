@@ -260,6 +260,38 @@ main h1 {
     margin-bottom: 0.5rem;
 }
 
+.visit-message {
+    padding: 1rem;
+    background: #eef5ff;
+    border-left: 4px solid #0b5ed7;
+    margin: 1rem 0;
+}
+
+.discover-grid {
+    display: grid;
+    gap: 1rem;
+
+    grid-template-areas:
+        "card1"
+        "card2"
+        "card3"
+        "card4"
+        "card5"
+        "card6"
+        "card7"
+        "card8";
+}
+
+.discover-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.discover-card img {
+    width: 100%;
+}
+
 /* =========================
    WEATHER
 ========================= */
