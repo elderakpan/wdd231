@@ -28,31 +28,37 @@
     <meta property="og:url"
         content="https://elderakpan.github.io/wdd231/join.html">
 
-    <!-- Google Fonts (FIXED) -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
 
-    <!-- JS (external only) -->
+    <!-- JavaScript -->
     <script src="scripts/navigation.js" defer></script>
     <script src="scripts/join.js" defer></script>
 </head>
 
-body>
+<body>
 
-<a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="skip-link">
+        Skip to main content
+    </a>
 
-<header>
-    <img src="images/chamber.jpg"
+    <header>
+
+        <img src="images/chamber.jpg"
             alt="Akwa Ibom Chamber of Commerce logo"
             width="80"
             height="80">
 
         <div>
+            <h2>Akwa Ibom Chamber of Commerce</h2>
             <p>Commerce & Business Growth</p>
         </div>
 
@@ -71,64 +77,94 @@ body>
                 <li><a href="thankyou.html">Thank You</a></li>
             </ul>
         </nav>
-</header>
 
-<main id="main-content">
+    </header>
 
-    <h1>Join the Chamber</h1> <!-- ONLY ONE H1 -->
+    <main id="main-content">
 
-    <form action="thankyou.html" method="get">
+        <h1>Join the Chamber</h1>
 
-        <label for="fname">First Name</label>
-        <input id="fname" name="fname" type="text" title="First Name" required>
+        <form action="thankyou.html" method="get">
 
-        <label for="lname">Last Name</label>
-        <input id="lname" name="lname" type="text" title="Last Name" required>
+            <label for="fname">First Name</label>
+            <input id="fname"
+                name="fname"
+                type="text"
+                title="First Name"
+                required>
 
-        <label for="orgtitle">Organization Title</label>
-        <input id="orgtitle" name="orgtitle" type="text" title="Organization Title">
+            <label for="lname">Last Name</label>
+            <input id="lname"
+                name="lname"
+                type="text"
+                title="Last Name"
+                required>
 
-        <label for="email">Email Address</label>
-        <input id="email" name="email" type="email" title="Email Address" required>
+            <label for="orgtitle">Organization Title</label>
+            <input id="orgtitle"
+                name="orgtitle"
+                type="text"
+                title="Organization Title">
 
-        <label for="phone">Mobile Phone</label>
-        <input id="phone" name="phone" type="tel" title="Mobile Phone">
+            <label for="email">Email Address</label>
+            <input id="email"
+                name="email"
+                type="email"
+                title="Email Address"
+                required>
 
-        <label for="orgname">Organization Name</label>
-        <input id="orgname" name="orgname" type="text" title="Organization Name">
+            <label for="phone">Mobile Phone</label>
+            <input id="phone"
+                name="phone"
+                type="tel"
+                title="Mobile Phone">
 
-        <label for="membership">Membership Level</label>
-        <select id="membership" name="membership">
-            <option>NP Membership</option>
-            <option>Bronze</option>
-            <option>Silver</option>
-            <option>Gold</option>
-        </select>
+            <label for="orgname">Organization Name</label>
+            <input id="orgname"
+                name="orgname"
+                type="text"
+                title="Organization Name">
 
-        <label for="desc">Organization Description</label>
-        <textarea id="desc" name="desc" title="Organization Description"></textarea>
+            <label for="membership">Membership Level</label>
+            <select id="membership" name="membership">
+                <option value="np">NP Membership</option>
+                <option value="bronze">Bronze</option>
+                <option value="silver">Silver</option>
+                <option value="gold">Gold</option>
+            </select>
 
-        <button type="submit" class="submit-btn">Submit</button>
+            <label for="desc">Organization Description</label>
+            <textarea id="desc"
+                name="desc"
+                title="Organization Description"></textarea>
 
-    </form>
+            <button type="submit" class="submit-btn">
+                Submit
+            </button>
 
-</main>
+        </form>
 
-<footer>
-     <section>
+    </main>
+
+    <footer>
+
+        <section>
             <h3>Akwa Ibom Chamber of Commerce</h3>
+
             <p>
                 10 Business Avenue,<br>
                 Uyo, Akwa Ibom State, Nigeria
             </p>
 
-            <p>Email:
+            <p>
+                Email:
                 <a href="mailto:info@akwaibomchamber.org">
                     info@akwaibomchamber.org
                 </a>
             </p>
 
-            <p>Phone:
+            <p>
+                Phone:
                 <a href="tel:+2348000000000">
                     +234 800 000 0000
                 </a>
@@ -137,16 +173,31 @@ body>
 
         <section class="socials">
 
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                <img src="images/facebook.jpg" alt="Facebook icon" width="32" height="32">
+            <a href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer">
+                <img src="images/facebook.jpg"
+                    alt="Facebook icon"
+                    width="32"
+                    height="32">
             </a>
 
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <img src="images/twitter.png" alt="Twitter icon" width="32" height="32">
+            <a href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer">
+                <img src="images/twitter.png"
+                    alt="Twitter icon"
+                    width="32"
+                    height="32">
             </a>
 
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                <img src="images/linkedin.png" alt="LinkedIn icon" width="32" height="32">
+            <a href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer">
+                <img src="images/linkedin.png"
+                    alt="LinkedIn icon"
+                    width="32"
+                    height="32">
             </a>
 
         </section>
@@ -157,9 +208,8 @@ body>
             <p id="lastModified"></p>
         </section>
 
-</footer>
+    </footer>
 
 </body>
+
 </html>
-
-
