@@ -19,7 +19,20 @@
         width: auto;
     }
 
-   
+    .navigation li {
+        list-style: none;
+    }
+
+    .navigation a {
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+    }
+
+    .navigation a:hover {
+        background: #0b5ed7;
+        color: white;
+    }
+
     /* GRID FIX */
     .home-grid {
         grid-template-columns: 1fr 1fr;
