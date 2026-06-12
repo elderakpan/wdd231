@@ -2,7 +2,6 @@
 
     header {
         display: flex;
-        justify-content: space-between;
         align-items: center;
     }
 
@@ -14,79 +13,35 @@
         display: flex;
         flex-direction: row;
         gap: 1rem;
+        margin-left: auto;   /* 🔥 THIS PUSHES NAV TO RIGHT */
         margin-top: 0;
     }
 
-}
-
-    /* HERO */
-    .hero-text {
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-        max-width: 500px;
-        border-radius: 10px;
+    .navigation li {
+        list-style: none;
     }
 
-    /* HOMEPAGE GRID */
-    .home-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    /* DESKTOP HEADER */
-    .home-header {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .home-header .navigation {
-        display: flex;
-        flex-direction: row;
-        gap: 1rem;
-        width: auto;
-    }
-
-    .home-header nav {
-        margin-left: auto;
-    }
-
-    .home-header .navigation a {
+    .navigation a {
         padding: 0.5rem 1rem;
         border-radius: 6px;
     }
 
-    .home-header .navigation a:hover {
+    .navigation a:hover {
         background: #0b5ed7;
         color: white;
     }
 
-    /* SPOTLIGHTS */
+    /* GRID FIX */
+    .home-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
     .spotlight-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    /* DIRECTORY */
-    #members.grid-view {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    #members.list-view .member-card {
-        display: grid;
-        grid-template-columns: 200px 1fr;
-        gap: 1.5rem;
-        text-align: left;
-        align-items: center;
-    }
-
-    #members.list-view .member-card img {
-        margin: 0;
-    }
-
-    /* JOIN PAGE */
     .join-container {
         grid-template-columns: 2fr 1fr;
-        align-items: start;
     }
 
     .membership-cards {
@@ -94,25 +49,15 @@
         top: 1rem;
     }
 
-    .join-form {
-        background-color: #fff;
-        padding: 2rem;
-        border-radius: 12px;
+    #members.grid-view {
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    .card {
-        transition: transform .3s ease;
+    #members.list-view .member-card {
+        display: grid;
+        grid-template-columns: 200px 1fr;
     }
 
-    .card:hover {
-        transform: translateY(-5px);
-    }
-
-    .results-card {
-        font-size: 1.1rem;
-    }
-
-    /* FOOTER */
     footer {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
