@@ -163,10 +163,9 @@ header {
 
 .navigation a:hover,
 .navigation a.active {
-    background-color: #ffffff;
+    background-color: var(--secondary-color);
     color: var(--primary-color);
 }
-
 /* =========================
    MAIN
 ========================= */
