@@ -1,3 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("timestamp").value = new Date().toISOString();
+    const timestamp = document.getElementById("timestamp");
+    if (timestamp) {
+        timestamp.value = new Date().toISOString();
+    }
 });
