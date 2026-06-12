@@ -1,64 +1,54 @@
-const tempEl = document.getElementById("temperature");
-const descEl = document.getElementById("weather-description");
-const forecastEl = document.getElementById("forecast");
+const tempEl = document.querySelector("#temperature");
+const descEl = document.querySelector("#weather-description");
+const forecastEl = document.querySelector("#forecast");
 
-// 🌍 Uyo location
-const city = "Uyo";
-const apiKey = "YOUR_API_KEY_HERE";
+// Uyo, Nigeria coordinates
+const lat = 5.0377;
+const lon = 7.9128;
 
-// Current weather API
+const apiKey = "YOUR_OPENWEATHER_API_KEY";
+
 const currentURL =
-    `https://api.openweathermap.org/data/2.5/weather?q=${city},NG&units=metric&appid=${apiKey}`;
+`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
-// Forecast API
 const forecastURL =
-    `https://api.openweathermap.org/data/2.5/forecast?q=${city},NG&units=metric&appid=${apiKey}`;
+`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
 async function getWeather() {
     try {
-        // CURRENT WEATHER
-        const currentResponse = await fetch(currentURL);
-        const currentData = await currentResponse.json();
 
-        if (tempEl) {
-            tempEl.textContent = `${Math.round(currentData.main.temp)}°C`;
-        }
+        const currentRes = await fetch(currentURL);
+        const currentData = await currentRes.json();
 
-        if (descEl) {
-            descEl.textContent = currentData.weather[0].description;
-        }
+        tempEl.textContent = `${Math.round(currentData.main.temp)}°C`;
+        descEl.textContent = currentData.weather[0].description;
 
-        // FORECAST
-        const forecastResponse = await fetch(forecastURL);
-        const forecastData = await forecastResponse.json();
+        const forecastRes = await fetch(forecastURL);
+        const forecastData = await forecastRes.json();
 
-        if (forecastEl) {
-            forecastEl.innerHTML = "";
+        forecastEl.innerHTML = "";
 
-            // pick one forecast per day (simple 3-day display)
-            const daily = forecastData.list.filter(item =>
-                item.dt_txt.includes("12:00:00")
-            ).slice(0, 3);
+        const daily = forecastData.list
+            .filter(item => item.dt_txt.includes("12:00:00"))
+            .slice(0, 3);
 
-            daily.forEach(day => {
-                const div = document.createElement("div");
-                div.innerHTML = `
-                    <p><strong>${day.dt_txt.split(" ")[0]}</strong></p>
-                    <p>${Math.round(day.main.temp)}°C</p>
-                    <p>${day.weather[0].description}</p>
-                    <hr>
-                `;
-                forecastEl.appendChild(div);
-            });
-        }
+        daily.forEach(day => {
+            const div = document.createElement("div");
+            div.classList.add("forecast-card");
+
+            div.innerHTML = `
+                <p><strong>${day.dt_txt.split(" ")[0]}</strong></p>
+                <p>${Math.round(day.main.temp)}°C</p>
+                <p>${day.weather[0].description}</p>
+            `;
+
+            forecastEl.appendChild(div);
+        });
 
     } catch (error) {
-        console.error("Weather error:", error);
-
-        if (tempEl) tempEl.textContent = "N/A";
-        if (descEl) descEl.textContent = "Weather unavailable";
-        if (forecastEl) forecastEl.textContent = "Forecast unavailable";
+        console.error(error);
+        tempEl.textContent = "Unavailable";
+        descEl.textContent = "Weather unavailable";
+        forecastEl.textContent = "Forecast unavailable";
     }
 }
-
-getWeather();

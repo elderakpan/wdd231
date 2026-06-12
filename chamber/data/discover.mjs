@@ -27,7 +27,7 @@ export const places = [
     name: "Le Meridien Hotel",
     address: "Uyo, Akwa Ibom",
     description: "Luxury hotel and tourism center.",
-    image: "images/le-meridien-ibom-hotel.jpg"
+    image: "images/le"
   },
   {
     name: "Raffia City",

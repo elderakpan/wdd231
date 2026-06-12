@@ -12,13 +12,21 @@
         content="Discover places of interest in Akwa Ibom State including tourism, culture, and business locations.">
     <meta name="author" content="Itoro Etim Akpan">
 
-    <link rel="icon" href="images/favicon.ico">
+    <meta property="og:title" content="Discover Akwa Ibom Chamber of Commerce">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/chamber.jpg">
+<meta property="og:url" content="https://elderakpan.github.io/wdd231/chamber/discover.html">
+
+<meta property="og:description"
+    content="Discover places of interest in Akwa Ibom State including tourism, culture, and business locations.">
+
+   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
 
     <script src="scripts/navigation.js" defer></script>
-    <script type="module" src="scripts/discover.js"></script>
+    <script type="module" src="scripts/discover.js" defer></script>
 </head>
 
 <body>
@@ -33,19 +41,22 @@
         height="80">
 
     <div>
-        <h1>Akwa Ibom Chamber of Commerce</h1>
+        <h2>Akwa Ibom Chamber of Commerce</h2>
         <p>Commerce & Business Growth</p>
     </div>
 
-    <button id="menu-button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+    <button id="menu-button"
+        aria-label="Open navigation menu"
+        aria-expanded="false">
+        ☰
+    </button>
 
-    <nav>
+    <nav aria-label="Main Navigation">
         <ul class="navigation">
             <li><a href="index.html">Home</a></li>
             <li><a href="directory.html">Directory</a></li>
             <li><a href="join.html">Join</a></li>
-            <li><a href="discover.html" class="active">Discover</a></li>
-            <li><a href="thankyou.html">Thank You</a></li>
+            <li><a href="discover.html" class="active" aria-current="page">Discover</a></li>
         </ul>
     </nav>
 
@@ -55,11 +66,13 @@
 
     <h1>Discover Akwa Ibom</h1>
 
-    <!-- Visit message (localStorage requirement) -->
     <div id="visit-message" class="visit-message"></div>
 
-    <!-- 8 cards injected here -->
-    <section id="discover-grid" class="discover-grid"></section>
+    <section
+        id="discover-grid"
+        class="discover-grid"
+        aria-label="Places to discover in Akwa Ibom">
+    </section>
 
 </main>
 
