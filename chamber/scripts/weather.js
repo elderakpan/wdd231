@@ -6,7 +6,8 @@ const forecastEl = document.querySelector("#forecast");
 const lat = 5.0377;
 const lon = 7.9128;
 
-const apiKey = "YOUR_OPENWEATHER_API_KEY";
+const city = "Uyo";
+const apiKey = "YOUR_REAL_API_KEY";
 
 const currentURL =
 `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
