@@ -3,6 +3,7 @@
     header {
         display: flex;
         align-items: center;
+        justify-content: space-between; /* important */
     }
 
     #menu-button {
@@ -13,9 +14,13 @@
         display: flex;
         flex-direction: row;
         gap: 1rem;
-        margin-left: auto; /* ⭐ pushes nav to right */
+
+        margin-left: auto; /* pushes nav to far right */
+        justify-content: flex-end;
         width: auto;
     }
+
+}
 
     .navigation li {
         list-style: none;
