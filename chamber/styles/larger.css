@@ -13,10 +13,24 @@
         display: flex;
         flex-direction: row;
         gap: 1rem;
-        margin-left: auto;   /* 🔥 THIS PUSHES NAV TO RIGHT */
-        margin-top: 0;
+        margin-left: auto; /* ⭐ pushes nav to right */
+        width: auto;
     }
 
+    .navigation li {
+        list-style: none;
+    }
+
+    .navigation a {
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+    }
+
+    .navigation a:hover {
+        background: #0b5ed7;
+        color: white;
+    }
+}
     .navigation li {
         list-style: none;
     }
