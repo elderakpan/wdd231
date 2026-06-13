@@ -46,6 +46,18 @@
         grid-template-columns: 2fr 1fr;
     }
 
+
+.discover-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "a b"
+        "c b"
+        "c d"
+        "e f"
+        "g h";
+}
+}
+
     .membership-cards {
         position: sticky;
         top: 1rem;
