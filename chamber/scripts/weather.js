@@ -1,13 +1,7 @@
-const tempEl = document.querySelector("#temperature");
-const descEl = document.querySelector("#weather-description");
-const forecastEl = document.querySelector("#forecast");
+const apiKey = "REAL_KEY";
 
-// Uyo, Nigeria coordinates
 const lat = 5.0377;
 const lon = 7.9128;
-
-const city = "Uyo";
-const apiKey = "YOUR_REAL_API_KEY";
 
 const currentURL =
 `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
@@ -15,41 +9,40 @@ const currentURL =
 const forecastURL =
 `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
-async function getWeather() {
+async function loadWeather() {
     try {
+        const current = await fetch(currentURL).then(r => r.json());
 
-        const currentRes = await fetch(currentURL);
-        const currentData = await currentRes.json();
+        document.querySelector("#temperature").textContent =
+            `${Math.round(current.main.temp)}°C`;
 
-        tempEl.textContent = `${Math.round(currentData.main.temp)}°C`;
-        descEl.textContent = currentData.weather[0].description;
+        document.querySelector("#weather-description").textContent =
+            current.weather[0].description;
 
-        const forecastRes = await fetch(forecastURL);
-        const forecastData = await forecastRes.json();
+        const forecastData = await fetch(forecastURL).then(r => r.json());
 
-        forecastEl.innerHTML = "";
+        const forecastBox = document.querySelector("#forecast");
+        forecastBox.innerHTML = "";
 
-        const daily = forecastData.list
-            .filter(item => item.dt_txt.includes("12:00:00"))
-            .slice(0, 3);
+        const daily = forecastData.list.filter(item =>
+            item.dt_txt.includes("12:00:00")
+        );
 
-        daily.forEach(day => {
-            const div = document.createElement("div");
-            div.classList.add("forecast-card");
+        daily.slice(0, 3).forEach(day => {
+            const card = document.createElement("div");
+            card.classList.add("forecast-card");
 
-            div.innerHTML = `
-                <p><strong>${day.dt_txt.split(" ")[0]}</strong></p>
+            card.innerHTML = `
+                <p><strong>${new Date(day.dt_txt).toLocaleDateString("en-US", { weekday: "short" })}</strong></p>
                 <p>${Math.round(day.main.temp)}°C</p>
-                <p>${day.weather[0].description}</p>
             `;
 
-            forecastEl.appendChild(div);
+            forecastBox.appendChild(card);
         });
 
-    } catch (error) {
-        console.error(error);
-        tempEl.textContent = "Unavailable";
-        descEl.textContent = "Weather unavailable";
-        forecastEl.textContent = "Forecast unavailable";
+    } catch (err) {
+        console.error("Weather error:", err);
     }
 }
+
+loadWeather();

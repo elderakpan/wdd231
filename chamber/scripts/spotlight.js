@@ -1,59 +1,48 @@
-const spotlightContainer =
-document.querySelector("#spotlight-container");
+const container = document.querySelector("#spotlight-container");
+const membersURL = "data/members.json";
 
-async function displaySpotlights() {
+async function loadSpotlights() {
+    try {
+        const members = await fetch(membersURL).then(r => r.json());
 
-    const response =
-        await fetch("data/members.json");
-
-    const members =
-        await response.json();
-
-    const spotlightMembers =
-        members.filter(member =>
-            member.membership === "Gold" ||
-            member.membership === "Silver"
+        const qualified = members.filter(m =>
+            m.membership === "Gold" ||
+            m.membership === "Silver"
         );
 
-    const shuffled =
-        spotlightMembers.sort(() =>
-            Math.random() - 0.5
-        );
+        const shuffled = qualified.sort(() => Math.random() - 0.5);
 
-    const selected =
-        shuffled.slice(0, 3);
+        const selected = shuffled.slice(0, 3);
 
-    spotlightContainer.innerHTML = "";
+        container.innerHTML = "";
 
-    selected.forEach(member => {
+        selected.forEach(m => {
+            const card = document.createElement("article");
+            card.classList.add("spotlight-card");
 
-        const card =
-            document.createElement("section");
+            card.innerHTML = `
+                <h3>${m.name}</h3>
 
-        card.classList.add(
-            "spotlight-card"
-        );
+                <img src="${m.image}"
+                     alt="${m.name} logo"
+                     loading="lazy">
 
-        card.innerHTML = `
-            <img
-                src="${member.image}"
-                alt="${member.name}">
+                <p><strong>${m.phone}</strong></p>
+                <p>${m.address}</p>
 
-            <h3>${member.name}</h3>
+                <a href="${m.website}" target="_blank" rel="noopener">
+                    Visit Website
+                </a>
 
-            <p>${member.address}</p>
+                <p class="membership">${m.membership} Member</p>
+            `;
 
-            <p>${member.phone}</p>
+            container.appendChild(card);
+        });
 
-            <p>${member.membership} Member</p>
-
-            <a href="${member.website}">
-                Visit Website
-            </a>
-        `;
-
-        spotlightContainer.appendChild(card);
-    });
+    } catch (err) {
+        console.error("Spotlight error:", err);
+    }
 }
 
-displaySpotlights();
+loadSpotlights();

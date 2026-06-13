@@ -1,10 +1,4 @@
-@media screen and (min-width: 768px) {
-
-    header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+@media (min-width: 768px) {
 
     #menu-button {
         display: none;
@@ -14,67 +8,20 @@
         display: flex;
         flex-direction: row;
         gap: 1rem;
-        margin-left: auto;
-        justify-content: flex-end;
-        width: auto;
     }
 
-    .navigation li {
-        list-style: none;
-    }
-
-    .navigation a {
-        padding: 0.5rem 1rem;
-        border-radius: 6px;
-    }
-
-    .navigation a:hover {
-        background: #0b5ed7;
-        color: white;
-    }
-
-    /* GRID FIX */
     .home-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .spotlight-grid {
         grid-template-columns: repeat(3, 1fr);
+        align-items: start;
     }
 
-    .join-container {
-        grid-template-columns: 2fr 1fr;
-    }
-
-
-.discover-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-        "a b"
-        "c b"
-        "c d"
-        "e f"
-        "g h";
-}
-}
-
-    .membership-cards {
-        position: sticky;
-        top: 1rem;
-    }
-
-    #members.grid-view {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    #members.list-view .member-card {
-        display: grid;
-        grid-template-columns: 200px 1fr;
+    #forecast {
+        justify-content: space-between;
     }
 
     footer {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 2fr 1fr 1fr;
         gap: 2rem;
     }
 }

@@ -25,8 +25,7 @@
     <meta property="og:image"
     content="https://elderakpan.github.io/wdd231/chamber/images/chamber.jpg">
     <meta property="og:url"
-        content="https://elderakpan.github.io/wdd231/index.html">
-
+    content="https://elderakpan.github.io/wdd231/chamber/index.html">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,46 +47,36 @@
 
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-   <header>
+  <header>
 
     <div class="logo-container">
+    <img src="images/chamber.jpg"
+         alt="Akwa Ibom Chamber Logo"
+         width="80"
+         height="80">
 
-        <img
-            src="images/chamber.jpg"
-            alt="Akwa Ibom Chamber of Commerce logo"
-            width="80"
-            height="80">
-
-        <div>
-
-            <h2 class="site-name">
-                Akwa Ibom Chamber
-            </h2>
-
-            <p>
-                Commerce and Business Growth
-            </p>
-
-        </div>
-
+    <div>
+        <h2 class="site-name">Akwa Ibom Chamber</h2>
+        <p>Commerce and Business Growth</p>
     </div>
+</div>
 
-        <button id="menu-button"
-            aria-label="Open navigation menu"
-            aria-expanded="false">
-            ☰
-        </button>
+    <button id="menu-button"
+        aria-label="Open navigation menu"
+        aria-expanded="false">
+        ☰
+    </button>
 
-     <nav>
-    <ul class="navigation">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="directory.html">Directory</a></li>
-        <li><a href="join.html">Join</a></li>
-        <li><a href="discover.html">Discover</a></li>
-    </ul>
-</nav>
+    <nav aria-label="Primary Navigation">
+        <ul class="navigation">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+            <li><a href="discover.html">Discover</a></li>
+        </ul>
+    </nav>
 
-    </header>
+</header>
 
     <main id="main-content">
 
@@ -121,52 +110,30 @@
        <div class="home-grid">
 
     <section class="card events">
-
-        <h2>Current Events</h2>
-
-        <article>
-            <h3>Business Expo 2026</h3>
-            <p>Meet investors, entrepreneurs, and innovators in Uyo this June.</p>
-        </article>
-
-        <article>
-            <h3>Digital Skills Workshop</h3>
-            <p>Learn modern business and marketing skills for growth.</p>
-        </article>
-
+        ...
     </section>
 
     <section class="card weather">
+    <h2>Weather</h2>
 
-        <h2>Weather</h2>
+    <p>
+        Temperature:
+        <span id="temperature">Loading...</span>
+    </p>
 
-        <p>
-            Temperature:
-            <span id="temperature">Loading...</span>
-        </p>
+    <p id="weather-description">Loading weather...</p>
 
-        <p id="weather-description">
-            Loading weather...
-        </p>
+    <h3>3-Day Forecast</h3>
 
-        <h3>3-Day Forecast</h3>
+    <div id="forecast"></div>
+</section>
 
-        <div id="forecast"></div>
-
+    <section class="card spotlights">
+        <h2>Member Spotlights</h2>
+        <div id="spotlight-container" class="spotlight-grid"></div>
     </section>
 
 </div>
-
-        <section class="spotlights">
-
-    <h2>Member Spotlights</h2>
-
-    <div
-        id="spotlight-container"
-        class="spotlight-grid">
-    </div>
-
-</section>
     </main>
 
    <footer>
