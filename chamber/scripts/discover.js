@@ -1,22 +1,46 @@
-import { places } from "../data/places.mjs";
+import { places } from "../data/discover.mjs";
 
-const container = document.querySelector("#places-container");
+const container = document.querySelector("#cards");
+const messageBox = document.querySelector("#visit-message");
 
-places.forEach(place => {
+/* -------------------------------
+   VISITOR MESSAGE (localStorage)
+--------------------------------*/
+const lastVisit = localStorage.getItem("lastVisit");
+const now = Date.now();
 
+let message = "";
+
+if (!lastVisit) {
+    message = "Welcome! Let us know if you have any questions.";
+} else {
+    const diffDays = Math.floor((now - lastVisit) / (1000 * 60 * 60 * 24));
+
+    if (diffDays < 1) {
+        message = "Back so soon! Awesome!";
+    } else if (diffDays === 1) {
+        message = "You last visited 1 day ago.";
+    } else {
+        message = `You last visited ${diffDays} days ago.`;
+    }
+}
+
+messageBox.textContent = message;
+localStorage.setItem("lastVisit", now);
+
+/* -------------------------------
+   BUILD CARDS
+--------------------------------*/
+places.forEach((place, index) => {
     const card = document.createElement("article");
-
     card.classList.add("card");
+    card.style.gridArea = `item${index + 1}`;
 
     card.innerHTML = `
         <h2>${place.name}</h2>
 
         <figure>
-            <img src="${place.image}"
-                 alt="${place.name}"
-                 loading="lazy"
-                 width="300"
-                 height="200">
+            <img src="${place.image}" alt="${place.name}" loading="lazy">
         </figure>
 
         <address>${place.address}</address>
@@ -27,52 +51,4 @@ places.forEach(place => {
     `;
 
     container.appendChild(card);
-});
-
-const message = document.querySelector("#visitMessage");
-
-const lastVisit = Number(localStorage.getItem("lastVisit"));
-
-const now = Date.now();
-
-if (!lastVisit) {
-
-    message.textContent =
-        "Welcome! Let us know if you have any questions.";
-
-} else {
-
-    const daysBetween = Math.floor(
-        (now - lastVisit) / 86400000
-    );
-
-    if (daysBetween < 1) {
-
-        message.textContent =
-            "Back so soon! Awesome!";
-
-    } else if (daysBetween === 1) {
-
-        message.textContent =
-            "You last visited 1 day ago.";
-
-    } else {
-
-        message.textContent =
-            `You last visited ${daysBetween} days ago.`;
-    }
-}
-
-localStorage.setItem("lastVisit", now);
-
-const areas = ["a","b","c","d","e","f","g","h"];
-
-places.forEach((place, index) => {
-    const card = document.createElement("article");
-
-    card.classList.add("discover-card");
-
-    card.style.gridArea = areas[index];
-
-    // card content...
 });
