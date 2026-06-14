@@ -1,134 +1,33 @@
-@media screen and (min-width: 768px) {
-
-    /* HEADER */
-
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+@media (min-width: 768px) {
 
     #menu-button {
         display: none;
     }
 
     .navigation {
-        flex-direction: row;
-        gap: 1rem;
-        margin-top: 0;
-    }
-
-    /* HERO */
-
-    .hero-text {
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-        max-width: 500px;
-        border-radius: 10px;
-    }
-
-    /* HOMEPAGE GRID */
-
-    .home-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-      /* DESKTOP HEADER */
-    .home-header {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    /* HORIZONTAL NAVIGATION */
-    .home-header .navigation {
         display: flex;
         flex-direction: row;
         gap: 1rem;
-        width: auto;
     }
 
-    /* HIDE MENU BUTTON */
-    #menu-button {
-        display: none;
-    }
-
-    .home-header nav {
-        margin-left: auto;
-    }
-
-    .home-header .navigation a {
-        padding: 0.5rem 1rem;
-        border-radius: 6px;
-    }
-
-    .home-header .navigation a:hover {
-        background: #0b5ed7;
-        color: white;
-    }
+    .discover-grid {
+    grid-template-columns: repeat(2, 1fr);
 }
 
-    /* SPOTLIGHTS */
+}
 
-    .spotlight-grid {
+    .home-grid {
         grid-template-columns: repeat(3, 1fr);
-    }
-
-    /* DIRECTORY */
-
-    #members.grid-view {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    #members.list-view .member-card {
-        display: grid;
-        grid-template-columns: 200px 1fr;
-        gap: 1.5rem;
-        text-align: left;
-        align-items: center;
-    }
-
-    #members.list-view .member-card img {
-        margin: 0;
-    }
-
-    @media screen and (min-width: 768px) {
-
-    .join-container {
-        grid-template-columns: 2fr 1fr;
         align-items: start;
     }
 
-    .membership-cards {
-        position: sticky;
-        top: 1rem;
+    #forecast {
+        justify-content: space-between;
     }
-
-    .join-form {
-        background-color: #fff;
-        padding: 2rem;
-        border-radius: 12px;
-    }
-
-    .card {
-        transition: transform .3s ease;
-    }
-
-    .card:hover {
-        transform: translateY(-5px);
-    }
-
-    .results-card {
-        font-size: 1.1rem;
-    }
-}
-
-    /* FOOTER */
 
     footer {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 2fr 1fr 1fr;
         gap: 2rem;
     }
 }

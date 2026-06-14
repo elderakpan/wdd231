@@ -1,5 +1,6 @@
-const timestamp = document.querySelector("#timestamp");
-
-const now = new Date();
-
-timestamp.value = now.toLocaleString();
+document.addEventListener("DOMContentLoaded", () => {
+    const timestamp = document.getElementById("timestamp");
+    if (timestamp) {
+        timestamp.value = new Date().toISOString();
+    }
+});
