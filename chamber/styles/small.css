@@ -32,10 +32,18 @@ header {
     color: white;
 }
 
+<<<<<<< HEAD
+=======
+.navigation {
+    display: none;
+    list-style: none;
+}
+>>>>>>> 0d73d7a9adbb51357b728e76ee63f9dda96f7f61
 
 .navigation.open {
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
 }
 
 .navigation {
@@ -61,6 +69,23 @@ header {
     padding: 1rem;
 }
 
+=======
+}
+
+.navigation a {
+    display: block;
+    padding: 0.75rem;
+    color: white;
+    text-decoration: none;
+}
+
+.navigation a.active {
+    background: white;
+    color: #0b5ed7;
+    border-radius: 6px;
+}
+
+>>>>>>> 0d73d7a9adbb51357b728e76ee63f9dda96f7f61
 /* HERO */
 .hero {
     position: relative;

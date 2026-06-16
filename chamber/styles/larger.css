@@ -10,12 +10,15 @@
         gap: 1rem;
     }
 
+<<<<<<< HEAD
     .discover-grid {
     grid-template-columns: repeat(2, 1fr);
 }
 
 }
 
+=======
+>>>>>>> 0d73d7a9adbb51357b728e76ee63f9dda96f7f61
     .home-grid {
         grid-template-columns: repeat(3, 1fr);
         align-items: start;

@@ -3,7 +3,11 @@ export const places = [
     name: "Ibom Plaza",
     address: "Udo Udoma Ave, Uyo",
     description: "A central recreational hub and landmark in Uyo.",
+<<<<<<< HEAD
     image: "images/ibom-plaza.jpg"
+=======
+    image: "images/ibom-plaza.webp"
+>>>>>>> 0d73d7a9adbb51357b728e76ee63f9dda96f7f61
   },
   {
     name: "Godswill Akpabio Stadium",
@@ -21,7 +25,11 @@ export const places = [
     name: "Le Meridien Ibom Hotel",
     address: "Nwaniba Road, Uyo",
     description: "Luxury hotel overlooking the Atlantic coastline.",
+<<<<<<< HEAD
     image: "images/le-meridien-ibom-hotel.jpg"
+=======
+    image: "images/hotel.webp"
+>>>>>>> 0d73d7a9adbb51357b728e76ee63f9dda96f7f61
   },
   {
     name: "Unity Park",
