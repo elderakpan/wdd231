@@ -1,10 +1,10 @@
-onst contactForm = document.querySelector("#contactForm");
+const contact = document.querySelector("#contact");
 
-if (contactForm) {
-    contactForm.addEventListener("submit", (event) => {
+if (contact) {
+    contact.addEventListener("submit", (event) => {
         event.preventDefault();
 
-        const formData = {
+        const Data = {
             name: document.querySelector("#name")?.value || "",
             email: document.querySelector("#email")?.value || "",
             message: document.querySelector("#message")?.value || ""
@@ -17,6 +17,6 @@ if (contactForm) {
 
         alert("Thank you! Your message has been received.");
 
-        contactForm.reset();
+        contact.reset();
     });
 }

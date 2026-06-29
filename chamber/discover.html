@@ -2,140 +2,208 @@
 <html lang="en-US">
 
 <head>
-<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0b5ed7">
 
-    <title>Discover | Akwa Ibom Chamber of Commerce</title>
+    <title>WDD231 | Akwa Ibom Chamber of Commerce | Discover</title>
 
     <meta name="description"
-        content="Discover attractions, culture, business hubs, and places of interest in Akwa Ibom State through the Chamber of Commerce discovery page.">
+        content="Discover attractions, culture, business opportunities, and places of interest throughout Akwa Ibom State.">
 
     <meta name="author" content="Itoro Etim Akpan">
 
-    <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Discover Akwa Ibom Chamber of Commerce">
+    <meta property="og:title"
+        content="Discover Akwa Ibom | Chamber of Commerce">
+
     <meta property="og:description"
-        content="Explore key attractions, businesses, and cultural landmarks in Akwa Ibom State through the Chamber discovery page.">
+        content="Explore attractions, culture, events, and business opportunities in Akwa Ibom State.">
+
     <meta property="og:image"
         content="https://elderakpan.github.io/wdd231/chamber/images/chamber.jpg">
+
     <meta property="og:url"
         content="https://elderakpan.github.io/wdd231/chamber/discover.html">
 
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- CSS (MUST MATCH AUDIT REQUIREMENT) -->
+    <!-- CSS -->
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
 
-    <!-- JS -->
-    <script type="module" src="scripts/discover.js" defer></script>
-=======
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Scripts -->
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/discover.js" defer></script>
 
-<title>Discover | Akwa Ibom Chamber</title>
-
-<link rel="stylesheet" href="styles/discover.css">
-
-<script type="module" src="scripts/discover.js" defer></script>
->>>>>>> 0d73d7a9adbb51357b728e76ee63f9dda96f7f61
 </head>
 
 <body>
 
-<header>
-    <h1>Discover Akwa Ibom</h1>
-<<<<<<< HEAD
+    <a href="#main-content" class="skip-link">
+        Skip to main content
+    </a>
 
-    <nav aria-label="Main navigation">
-        <ul class="navigation">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="directory.html">Directory</a></li>
-            <li><a href="join.html">Join</a></li>
-            <li><a href="discover.html" class="active">Discover</a></li>
-        </ul>
-    </nav>
-=======
->>>>>>> 0d73d7a9adbb51357b728e76ee63f9dda96f7f61
-</header>
+    <header>
 
-<main>
+        <div class="logo-container">
 
-<<<<<<< HEAD
-    <!-- VISITOR MESSAGE (REQUIRED FEATURE) -->
-    <div id="visit-message"></div>
+            <img
+                src="images/chamber.jpg"
+                alt="Akwa Ibom Chamber Logo"
+                width="80"
+                height="80">
 
-    <!-- GRID AREA -->
-    <section class="discover-grid" id="cards"></section>
-=======
-<!-- VISITOR MESSAGE -->
-<div id="visit-message"></div>
+            <div>
+                <h2 class="site-name">Akwa Ibom Chamber</h2>
+                <p>Commerce and Business Growth</p>
+            </div>
 
-<!-- GRID AREA -->
-<section class="discover-grid" id="cards"></section>
->>>>>>> 0d73d7a9adbb51357b728e76ee63f9dda96f7f61
+        </div>
 
-</main>
+        <button
+            id="menu-button"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
+            ☰
+        </button>
 
-<footer>
-<<<<<<< HEAD
+        <nav aria-label="Primary Navigation">
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html" class="active">Discover</a></li>
+            </ul>
+        </nav>
 
-    <section>
-        <h3>Akwa Ibom Chamber of Commerce</h3>
+    </header>
 
-        <p>
-            10 Business Avenue,<br>
-            Uyo, Akwa Ibom State, Nigeria
-        </p>
+    <main id="main-content">
 
-        <p>
-            Email:
-            <a href="mailto:info@akwaibomchamber.org">
-                info@akwaibomchamber.org
+        <h1>Discover Akwa Ibom State</h1>
+
+        <section class="visitor-message">
+            <h2>Your Visit</h2>
+            <p id="visit-message"></p>
+        </section>
+
+        <section class="discover-grid">
+
+            <div class="discover-card">
+
+                <figure>
+                    <img
+                        src="images/ibom-plaza.webp"
+                        alt="Ibom Plaza"
+                        loading="lazy"
+                        width="400"
+                        height="250">
+                </figure>
+
+                <h2>Ibom Plaza</h2>
+
+                <address>
+                    Wellington Bassey Way, Uyo
+                </address>
+
+                <p>
+                    A central recreational and commercial landmark in Uyo.
+                </p>
+
+                <button>Learn More</button>
+
+            </div>
+
+            <div class="discover-card">
+
+                <figure>
+                    <img
+                        src="images/ibeno-beach.webp"
+                        alt="Ibeno Beach"
+                        loading="lazy"
+                        width="400"
+                        height="250">
+                </figure>
+
+                <h2>Ibeno Beach</h2>
+
+                <address>
+                    Ibeno Local Government Area
+                </address>
+
+                <p>
+                    One of the longest sand beaches in West Africa.
+                </p>
+
+                <button>Learn More</button>
+
+            </div>
+
+            <!-- Additional cards generated by JS or added manually -->
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <section>
+
+            <h3>Akwa Ibom Chamber of Commerce</h3>
+
+            <p>
+                10 Business Avenue,<br>
+                Uyo, Akwa Ibom State, Nigeria
+            </p>
+
+            <p>
+                Email:
+                <a href="mailto:info@akwaibomchamber.org">
+                    info@akwaibomchamber.org
+                </a>
+            </p>
+
+            <p>
+                Phone:
+                <a href="tel:+2348000000000">
+                    +234 800 000 0000
+                </a>
+            </p>
+
+        </section>
+
+        <div class="social-links">
+
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <img src="images/facebook.jpg" alt="Facebook icon" width="32" height="32">
             </a>
-        </p>
 
-        <p>
-            Phone:
-            <a href="tel:+2348000000000">
-                +234 800 000 0000
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <img src="images/twitter.png" alt="Twitter icon" width="32" height="32">
             </a>
-        </p>
-    </section>
 
-    <div class="social-links">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-            <img src="images/facebook.jpg" alt="Facebook icon" width="32" height="32">
-        </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <img src="images/linkedin.png" alt="LinkedIn icon" width="32" height="32">
+            </a>
 
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <img src="images/twitter.png" alt="Twitter icon" width="32" height="32">
-        </a>
+        </div>
 
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <img src="images/linkedin.png" alt="LinkedIn icon" width="32" height="32">
-        </a>
-    </div>
+        <div class="footer-meta">
+            <p>© 2026 Akwa Ibom Chamber</p>
+            <p>Itoro Etim Akpan | WDD 231</p>
+            <p id="lastModified"></p>
+        </div>
 
-    <div class="footer-meta">
-        <p>© 2026 Akwa Ibom Chamber</p>
-        <p>Itoro Etim Akpan | WDD 231</p>
-        <p id="lastModified"></p>
-    </div>
-
-=======
-    <p>© 2026 Akwa Ibom Chamber</p>
->>>>>>> 0d73d7a9adbb51357b728e76ee63f9dda96f7f61
-</footer>
+    </footer>
 
 </body>
 </html>

@@ -24,52 +24,36 @@ header {
     gap: 1rem;
 }
 
-/* NAV */
+/* NAVIGATION */
 #menu-button {
     font-size: 2rem;
     background: none;
     border: none;
     color: white;
+    cursor: pointer;
 }
 
-<<<<<<< HEAD
-=======
+
 .navigation {
     display: none;
     list-style: none;
 }
->>>>>>> 0d73d7a9adbb51357b728e76ee63f9dda96f7f61
+
 
 .navigation.open {
     display: flex;
     flex-direction: column;
-<<<<<<< HEAD
+
 }
 
 .navigation {
+    display: none;
     list-style: none;
+}
+
+.navigation.open {
     display: flex;
-    gap: 1rem;
-    padding: 0;
-}
-
-.navigation a {
-    text-decoration: none;
-    color: black;
-}
-
-.navigation a.active {
-    font-weight: bold;
-    border-bottom: 2px solid #0b5ed7;
-}
-
-.discover-grid {
-    display: grid;
-    gap: 1rem;
-    padding: 1rem;
-}
-
-=======
+    flex-direction: column;
 }
 
 .navigation a {
@@ -85,7 +69,13 @@ header {
     border-radius: 6px;
 }
 
->>>>>>> 0d73d7a9adbb51357b728e76ee63f9dda96f7f61
+/* MAIN HEADINGS */
+main h1 {
+    text-align: center;
+    margin: 1rem;
+}
+
+
 /* HERO */
 .hero {
     position: relative;
